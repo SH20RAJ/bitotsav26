@@ -1,109 +1,103 @@
 "use client";
 
-import { SectionHeader } from "@/components/SectionHeader";
-import { TeamMemberCard } from "@/components/TeamMemberCard";
-import { TeamMember } from "@/types";
+import KineticTeamHybrid from "@/components/ui/kinetic-team-hybrid";
 
-const developers: TeamMember[] = [
+const developers = [
   { 
+    id: "dev-01",
     name: "Manoj Kumar", 
     role: "Tech Team Lead", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Manoj",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-02",
     name: "Venkat Saahit Kamu", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Venkat",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-03",
     name: "Mritunjay Raj", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Mritunjay",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-04",
     name: "Shaswat Raj", 
     role: "Web Developer", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Shaswat",
-    socials: { linkedin: "#", github: "https://github.com/sh20raj" } 
   },
   { 
+    id: "dev-05",
     name: "Abhinav Kumar Choudhary", 
     role: "UI Designer", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Abhinav",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-06",
     name: "Raghav Bajaj", 
     role: "AI/ML Developer", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Raghav",
-    socials: { linkedin: "#" } 
   },
    { 
+    id: "dev-07",
     name: "Aniket Gupta", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Aniket",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-08",
     name: "Vaibhav Anand Singh", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Vaibhav",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-09",
     name: "Kunal Kashyap", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Kunal",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-10",
     name: "Arya Chakraborty", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Arya",
-    socials: { linkedin: "#" } 
   },
    { 
+    id: "dev-11",
     name: "Rishabh Anand", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Rishabh",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-12",
     name: "Sarthak Singh", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Sarthak",
-    socials: { linkedin: "#" } 
   },
    { 
+    id: "dev-13",
     name: "Deepak Pradhan", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Deepak",
-    socials: { linkedin: "#" } 
   },
   { 
+    id: "dev-14",
     name: "Priyanshu Agrahari", 
     role: "Tech Team", 
     image: "https://api.dicebear.com/9.x/avataaars/svg?seed=Priyanshu",
-    socials: { linkedin: "#" } 
   },
 ];
 
 export default function DevelopersContent() {
   return (
-    <>
-      <SectionHeader 
-        title="Code Wizards" 
-        subtitle="Meet the developers who crafted this digital experience with lines of code and cups of coffee."
-      />
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {developers.map((dev, i) => (
-          <TeamMemberCard key={i} member={dev} />
-        ))}
-      </div>
-    </>
+    <div className="min-h-screen bg-[#050A1F]">
+        <KineticTeamHybrid 
+            title="Code Wizards" 
+            subtitle="The Architects of Bitotsav '26"
+            members={developers} 
+        />
+    </div>
   );
 }
+

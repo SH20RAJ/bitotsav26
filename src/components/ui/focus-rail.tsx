@@ -41,7 +41,7 @@ const BASE_SPRING = {
   stiffness: 300,
   damping: 30,
   mass: 1,
-};
+} as const;
 
 /**
  * Scale Spring
@@ -52,7 +52,7 @@ const TAP_SPRING = {
   stiffness: 450,
   damping: 18, // Lower damping = subtle overshoot/wobble "tap"
   mass: 1,
-};
+} as const;
 
 export function FocusRail({
   items,
@@ -215,10 +215,9 @@ export function FocusRail({
                   opacity: opacity,
                   filter: `blur(${blur}px) brightness(${brightness})`,
                 }}
-                transition={(val) => {
-                    // Use bouncier spring for scale to create the "Tap" effect
-                    if (val === "scale") return TAP_SPRING;
-                    return BASE_SPRING;
+                transition={{
+                    scale: TAP_SPRING,
+                    default: BASE_SPRING
                 }}
                 style={{
                   transformStyle: "preserve-3d",

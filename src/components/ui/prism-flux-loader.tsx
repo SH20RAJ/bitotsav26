@@ -5,7 +5,7 @@ import {PlusIcon} from "lucide-react"
 interface CubeLoaderProps {
   size?: number; // cube size
   speed?: number; // rotation speed
-  textSeize?: number;
+  textSize?: number;
 }
 
 export const PrismFluxLoader: React.FC<CubeLoaderProps> = ({
@@ -39,7 +39,7 @@ export const PrismFluxLoader: React.FC<CubeLoaderProps> = ({
   const currentStatus = statuses[statusIndex];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 h-[220px]">
+    <div className="flex flex-col items-center justify-center gap-8 h-[300px]">
       {/* Cube Container */}
       <div
         className="relative"
@@ -61,31 +61,31 @@ export const PrismFluxLoader: React.FC<CubeLoaderProps> = ({
             `rotateX(-90deg) translateZ(${half}px)`, // bottom
           ];
 
-          const borderHue = i * 60;
-
           return (
             <div
               key={i}
-              className={`absolute flex items-center justify-center text-[${textSize}px] font-semibold text-foreground`}
+              className={`absolute flex items-center justify-center border border-[#FFD700]/60 bg-[#800020]/20 backdrop-blur-sm shadow-[0_0_15px_rgba(255,215,0,0.3)]`}
               style={{
                 width: size,
                 height: size,
-                border: `1px solid var(--foreground)`,
                 transform: faceTransforms[i],
-                backfaceVisibility: "hidden",
+                backfaceVisibility: "visible", // Changed to visible for glass effect
               }}
             >
-             <PlusIcon/>
+             <PlusIcon className="text-[#FFD700] w-8 h-8 opacity-80" />
             </div>
           );
         })}
       </div>
 
       {/* Status Text Below Cube */}
-      <div
-        className="text-sm font-semibold text-foreground tracking-wide"
-      >
-        {currentStatus}...
+      <div className="flex flex-col items-center gap-2">
+          <div className="text-xl font-bold font-heading text-[#FFD700] tracking-widest uppercase animate-pulse">
+            Loading Gaatha
+          </div>
+          <div className="text-xs font-serif text-[#C5A059]/60 italic tracking-wide">
+            {currentStatus}...
+          </div>
       </div>
     </div>
   );
