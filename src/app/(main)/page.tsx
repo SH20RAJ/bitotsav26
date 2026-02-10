@@ -39,31 +39,41 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="mb-8"
-          >
-             <span className="inline-block py-1 px-4 rounded-full border border-[#C5A059]/40 bg-[#800020]/20 text-[#FFD700] text-sm tracking-[0.2em] font-serif uppercase mb-6 backdrop-blur-sm">
-                The Endless Saga
-             </span>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading mb-6 tracking-tight">
-              <span className="block text-gradient-gold drop-shadow-xl">
-                Bitotsav
-              </span>
-              <span className="block text-4xl md:text-6xl text-[#E0D8C0] mt-2 font-serif italic tracking-normal">
-                2026
-              </span>
-            </h1>
-          </motion.div>
+          {/* Content Container */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+        
+        {/* Animated Title */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-6 relative"
+        >
+          <h1 className="text-6xl md:text-9xl font-bold font-heading text-[#FFD700] tracking-wider relative z-10 drop-shadow-[0_0_25px_rgba(255,215,0,0.3)]">
+            BITOTSAV <span className="text-[#C5A059]">&apos;26</span>
+          </h1>
+          {/* Subtle Glow behind title */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#FFD700]/10 blur-[100px] rounded-full -z-10" />
+        </motion.div>
+
+        {/* Thematic Subtitle */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="space-y-4 mb-10"
+        >
+          <div className="flex items-center justify-center space-x-4">
+             <div className="h-[1px] w-12 bg-[#C5A059]/60"></div>
+             <p className="text-xl md:text-2xl text-[#E0D8C0] font-serif tracking-[0.2em] uppercase">
+                The 35th Edition
+             </p>
+             <div className="h-[1px] w-12 bg-[#C5A059]/60"></div>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold font-heading text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#F4E4BC] to-[#C5A059] drop-shadow-sm">
+            GAATHA: The Endless Saga
+          </h2>
+        </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

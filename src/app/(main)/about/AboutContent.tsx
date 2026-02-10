@@ -53,7 +53,7 @@ export default function AboutContent() {
             transition={{ duration: 0.8 }}
             className="first-letter:text-5xl first-letter:font-heading first-letter:text-[#FFD700] first-letter:mr-2 first-letter:float-left"
         >
-            Bitotsav, the annual socio-cultural festival of BIT Mesra, began its journey in 1992. What started as a humble initiative by a small group of students has now evolved into one of Eastern India's largest extravaganzas.
+            Bitotsav, the annual socio-cultural festival of BIT Mesra, began its journey in 1992. What started as a humble initiative by a small group of students has now evolved into one of Eastern India&apos;s largest extravaganzas.
         </motion.p>
         <motion.p
             initial={{ opacity: 0 }}
