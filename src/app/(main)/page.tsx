@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Users, Zap, Music, Mic } from "lucide-react";
+import { ArrowRight, Calendar, Users, Zap, Music, Mic, ScrollText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const features = [
@@ -10,19 +10,19 @@ const features = [
     title: "Cultural Extravaganza",
     description: "Experience the vibrancy of dance, music, and drama with flagship events like Dance Saga and Battle of Bands.",
     icon: Music,
-    color: "from-pink-500 to-rose-500",
+    color: "from-[#800020] to-[#500014]", // Maroon gradient
   },
   {
     title: "Technical Prowess",
     description: "Showcase your coding and engineering skills in Hackathons, Robowars, and Technical Quizzes.",
     icon: Zap,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-[#B8860B] to-[#DAA520]", // Gold gradient
   },
   {
     title: "Star Nights",
     description: "Witness electrifying performances by celebrity artists and bands that will leave you spellbound.",
     icon: Mic,
-    color: "from-violet-500 to-purple-500",
+    color: "from-[#050A1F] to-[#0A1F45]", // Deep Blue gradient
   },
 ];
 
@@ -30,24 +30,36 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-4">
-        {/* Background Elements */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+        {/* Decorative Mandala/Runes (CSS Radial Gradients) */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl animate-[pulse_6s_infinite]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl animate-[pulse_8s_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#800020]/10 rounded-full blur-3xl animate-[pulse_10s_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#C5A059]/20 rounded-full animate-[spin_60s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-[#C5A059]/10 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="mb-8"
+          >
+             <span className="inline-block py-1 px-4 rounded-full border border-[#C5A059]/40 bg-[#800020]/20 text-[#FFD700] text-sm tracking-[0.2em] font-serif uppercase mb-6 backdrop-blur-sm">
+                The Endless Saga
+             </span>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading mb-6 tracking-tight">
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-white to-cyan-400">
+              <span className="block text-gradient-gold drop-shadow-xl">
                 Bitotsav
               </span>
-              <span className="block text-4xl md:text-6xl text-white/80 mt-2">
+              <span className="block text-4xl md:text-6xl text-[#E0D8C0] mt-2 font-serif italic tracking-normal">
                 2026
               </span>
             </h1>
@@ -56,71 +68,78 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-2xl text-[#C5A059]/80 max-w-3xl mx-auto mb-12 leading-relaxed font-serif"
           >
-            Where Technology Meets Culture. BIT Mesra's Premier Cultural, Sports & Technical Festival.
+            Where distinct tales converge into one legendary narrative. <br/>
+            Witness the grand unification of Culture, Sports, and Technology.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Link
               href="/events"
-              className="px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-full font-semibold text-lg flex items-center space-x-2 transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transform hover:-translate-y-1"
+              className="group px-8 py-4 bg-[#800020] hover:bg-[#A00028] text-[#FFD700] border border-[#C5A059] rounded-sm font-bold text-lg flex items-center space-x-3 transition-all duration-300 shadow-[0_0_20px_rgba(128,0,32,0.4)] hover:shadow-[0_0_30px_rgba(128,0,32,0.6)]"
             >
-              <span>Explore Events</span>
-              <ArrowRight className="w-5 h-5" />
+              <span>Explore The Saga</span>
+              <ScrollText className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </Link>
             <Link
               href="/about"
-              className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold text-lg flex items-center space-x-2 transition-all duration-300 backdrop-blur-sm"
+              className="px-8 py-4 bg-transparent hover:bg-[#C5A059]/10 text-[#E0D8C0] border border-[#C5A059]/30 rounded-sm font-medium text-lg flex items-center space-x-2 transition-all duration-300 backdrop-blur-sm font-serif"
             >
               <span>Our Legacy</span>
-              <Users className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden bg-[#050A1F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white">Experience the Magic</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-violet-500 to-cyan-500 mx-auto rounded-full" />
+            <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-[#FFD700]">Chapters of the Fest</h2>
+            <div className="flex items-center justify-center gap-2 opacity-60">
+                <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-[#C5A059]" />
+                <div className="w-2 h-2 rotate-45 bg-[#C5A059]" />
+                <div className="h-[1px] w-24 bg-gradient-to-l from-transparent to-[#C5A059]" />
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="group relative p-8 rounded-2xl glass hover:bg-white/5 transition-all duration-300 border border-white/10"
+                className="group relative p-8 rounded-lg bg-[#0A1025] border border-[#C5A059]/10 hover:border-[#C5A059]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
               >
                 <div className={cn(
-                  "w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gradient-to-br",
+                  "w-14 h-14 rounded-full flex items-center justify-center mb-6 bg-gradient-to-br border border-[#FFFFFF]/10 shadow-lg",
                   feature.color
                 )}>
-                  <feature.icon className="w-6 h-6 text-white" />
+                  <feature.icon className="w-6 h-6 text-[#E0D8C0]" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <h3 className="text-2xl font-bold font-serif text-[#E0D8C0] mb-4 group-hover:text-[#FFD700] transition-colors">{feature.title}</h3>
+                <p className="text-[#C5A059]/70 leading-relaxed font-sans">
                   {feature.description}
                 </p>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+                    <feature.icon className="w-24 h-24" />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -128,34 +147,32 @@ export default function Home() {
       </section>
 
       {/* Marquee/Sponsors Preview */}
-      <section className="py-20 border-t border-white/5 bg-black/50">
+      <section className="py-20 border-t border-[#C5A059]/10 bg-[#070D24]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-2xl font-bold font-heading mb-12 text-gray-500">Trusted by Industry Leaders</h3>
-            <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                {/* Placeholders for Sponsor Logos */}
-                <div className="text-2xl font-bold text-white">SBI</div>
-                <div className="text-2xl font-bold text-white">RedBull</div>
-                <div className="text-2xl font-bold text-white">Nestle</div>
-                <div className="text-2xl font-bold text-white">CMPDI</div>
-                <div className="text-2xl font-bold text-white">Jharkhand Tourism</div>
+            <h3 className="text-xl font-bold font-serif tracking-widest uppercase mb-12 text-[#C5A059]/60">Supported By The Kingdom</h3>
+            <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-80 transition-all duration-500">
+                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">SBI</div>
+                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">RedBull</div>
+                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">Nestle</div>
+                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">CMPDI</div>
+                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">Jharkhand Tourism</div>
             </div>
         </div>
       </section>
 
        {/* CTA Section */}
-       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-violet-900/10" />
+       <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#800020]/5 pattern-grid-lg opacity-20" />
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-4xl md:text-6xl font-bold font-heading mb-8 text-white">Ready for the Experience?</h2>
-            <p className="text-xl text-gray-300 mb-10">
-                Join us for 4 days of unlimited fun, competition, and memories.
-                Bitotsav 2026 awaits you.
+            <h2 className="text-4xl md:text-6xl font-bold font-heading mb-8 text-[#FFD700]">The Saga Awaits</h2>
+            <p className="text-xl text-[#E0D8C0] mb-12 font-serif italic">
+                Will you be part of the legend? Join us for the grandest celebration of the year.
             </p>
             <Link
               href="/tickets"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-full hover:from-violet-500 hover:to-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-[#050A1F] transition-all duration-300 bg-gradient-to-r from-[#C5A059] to-[#FFD700] rounded-sm hover:from-[#E5C079] hover:to-[#FFE033] shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:shadow-[0_0_50px_rgba(255,215,0,0.5)] transform hover:-translate-y-1"
             >
-              Get Your Passes
+              Claim Your Access
             </Link>
         </div>
       </section>
