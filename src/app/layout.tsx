@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Cinzel, Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-cinzel",
 });
 
-const outfit = Outfit({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-playfair",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+  variable: "--font-lato",
 });
 
 export const metadata: Metadata = {
-  title: "Bitotsav 2026",
-  description: "BIT Mesra's Premier Cultural, Sports & Technical Festival",
+  title: "Bitotsav 2026 | Gaatha",
+  description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
 };
 
 export default function RootLayout({
@@ -27,9 +33,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased bg-black text-white selection:bg-purple-500/30 selection:text-white`}
+        className={`${cinzel.variable} ${playfair.variable} ${lato.variable} antialiased bg-[#050A1F] text-[#E0D8C0] selection:bg-[#800020]/30 selection:text-white overflow-x-hidden`}
       >
-        <div className="fixed inset-0 -z-10 h-full w-full bg-black [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] opacity-50"></div>
+        {/* Texture Overlay */}
+        <div className="fixed inset-0 -z-10 h-full w-full opacity-30 pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }}></div>
+        
+        {/* Gradient Mesh */}
+        <div className="fixed inset-0 -z-20 h-full w-full bg-[#050A1F] [background:radial-gradient(125%_125%_at_50%_10%,#1A0505_40%,#050A1F_100%)]"></div>
+
         <Navbar />
         <main className="min-h-screen pt-20">
           {children}
