@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Users, Zap, Music, Mic, ScrollText } from "lucide-react";
 import { cn } from "@/lib/utils";
+import EnergyBeam from "@/components/ui/energy-beam";
 
 const features = [
   {
@@ -30,12 +31,12 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        {/* Decorative Mandala/Runes (CSS Radial Gradients) */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#800020]/10 rounded-full blur-3xl animate-[pulse_10s_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#C5A059]/20 rounded-full animate-[spin_60s_linear_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-[#C5A059]/10 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 bg-black">
+        {/* Energy Beam Background */}
+        <div className="absolute inset-0 z-0">
+             <EnergyBeam className="opacity-80" />
+             {/* Overlay to blend with theme */}
+             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#050A1F]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full text-center">
