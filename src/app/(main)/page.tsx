@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, Users, Zap, Music, Mic, ScrollText } from "lucide
 import { cn } from "@/lib/utils";
 import EnergyBeam from "@/components/ui/energy-beam";
 import { FocusRail, FocusRailItem } from "@/components/ui/focus-rail";
+import { LogoCloud } from "@/components/ui/logo-cloud-4";
 
 const features = [
   {
@@ -200,16 +201,18 @@ export default function Home() {
 
       {/* Marquee/Sponsors Preview */}
       <section className="py-20 border-t border-[#C5A059]/10 bg-[#070D24]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-xl font-bold font-serif tracking-widest uppercase mb-12 text-[#C5A059]/60">Supported By The Kingdom</h3>
-            <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-80 transition-all duration-500">
-                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">SBI</div>
-                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">RedBull</div>
-                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">Nestle</div>
-                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">CMPDI</div>
-                <div className="text-2xl font-bold text-[#E0D8C0] font-heading">Jharkhand Tourism</div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+            <h3 className="text-xl font-bold font-serif tracking-widest uppercase text-[#C5A059]/60">Supported By The Kingdom</h3>
         </div>
+        <LogoCloud logos={[
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=SBI", alt: "SBI" },
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=RedBull", alt: "RedBull" },
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=Nestle", alt: "Nestle" },
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=CMPDI", alt: "CMPDI" },
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=JHTourism", alt: "Jharkhand Tourism" },
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=Coke", alt: "Coca Cola" },
+          { src: "https://api.dicebear.com/9.x/initials/svg?seed=NTPC", alt: "NTPC" },
+        ]} />
       </section>
 
        {/* CTA Section */}

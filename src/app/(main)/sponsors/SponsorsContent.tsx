@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoCloud } from "@/components/ui/logo-cloud-4";
 
 const pastSponsors = [
   "Jharkhand Tourism",
@@ -41,20 +42,10 @@ export default function SponsorsContent() {
 
       <div className="max-w-7xl mx-auto text-center">
         <h3 className="text-2xl font-bold font-serif text-[#E0D8C0] mb-12 uppercase tracking-widest">Past Sponsors</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {pastSponsors.map((sponsor, index) => (
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-8 rounded-sm bg-[#0A1025] border border-[#C5A059]/30 flex items-center justify-center grayscale hover:grayscale-0 hover:bg-[#151b33] hover:border-[#FFD700]/60 transition-all duration-300 group"
-                >
-                    <span className="text-xl font-bold font-heading text-[#C5A059] group-hover:text-[#FFD700] transition-colors">{sponsor}</span>
-                </motion.div>
-            ))}
-        </div>
+        <LogoCloud logos={pastSponsors.map(name => ({
+            src: `https://api.dicebear.com/9.x/initials/svg?seed=${name}`,
+            alt: name
+        }))} />
       </div>
       
       <div className="mt-32 text-center">

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, Calendar, Trophy, Heart } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import ReactorKnob from "@/components/ui/control-knob";
 import { cn } from "@/lib/utils";
 
 const stats = [

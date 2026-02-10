@@ -1,10 +1,14 @@
 "use client";
 
-import { cn } from "@/lib/utils";// reactor-knob.tsx
+import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
 
-export default function ReactorKnob() {
+interface ReactorKnobProps {
+    className?: string;
+}
+
+export default function ReactorKnob({ className }: ReactorKnobProps) {
   // --- CONFIGURATION ---
   const MIN_DEG = -135;
   const MAX_DEG = 135;
@@ -98,22 +102,9 @@ export default function ReactorKnob() {
   const ticks = Array.from({ length: TOTAL_TICKS + 1 });
 
   return (
-    // FULL SCREEN CONTAINER
-    <div className="fixed inset-0 w-full h-full bg-neutral-950 flex flex-col items-center justify-center overflow-hidden">
-     
-      {/* BACKGROUND TEXTURE */}
-      <div 
-        className="absolute inset-0 opacity-20 pointer-events-none"
-        style={{ 
-            backgroundImage: "linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)",
-            backgroundSize: "60px 60px"
-        }}
-      />
-      {/* VIGNETTE SHADOW */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,rgba(0,0,0,0.8)_100%)] pointer-events-none" />
-
-      {/* COMPONENT WRAPPER */}
-      <div className="relative z-10 scale-125 md:scale-150">
+    <div className={cn("relative flex flex-col items-center justify-center p-8", className)}>
+       
+       <div className="relative z-10 scale-100">
         
         <div className="relative w-64 h-64 select-none">
           
