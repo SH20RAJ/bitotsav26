@@ -25,12 +25,12 @@ export default function TeamContent() {
   return (
     <>
       <SectionHeader 
-        title="Meet the Team" 
-        subtitle="The dedicated individuals working behind the scenes to make Bitotsav 2026 a reality."
+        title="Council of Leaders" 
+        subtitle="The dedicated individuals who steer the ship through stormy seas."
       />
 
       <div className="max-w-7xl mx-auto mb-20">
-        <h3 className="text-2xl font-bold font-heading text-white mb-8 text-center">Core Committee</h3>
+        <h3 className="text-2xl font-bold font-serif text-[#FFD700] mb-8 text-center uppercase tracking-widest border-b border-[#C5A059]/30 pb-4 inline-block w-full">Core Committee</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {coreTeam.map((member, i) => (
             <TeamMemberCard key={i} member={member} />
@@ -39,7 +39,7 @@ export default function TeamContent() {
       </div>
 
        <div className="max-w-7xl mx-auto">
-        <h3 className="text-2xl font-bold font-heading text-white mb-8 text-center">Technical Team</h3>
+        <h3 className="text-2xl font-bold font-serif text-[#FFD700] mb-8 text-center uppercase tracking-widest border-b border-[#C5A059]/30 pb-4 inline-block w-full">Technical Team</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {developers.map((member, i) => (
             <TeamMemberCard key={i} member={member} />
