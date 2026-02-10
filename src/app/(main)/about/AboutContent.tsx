@@ -53,7 +53,7 @@ export default function AboutContent() {
             transition={{ duration: 0.8 }}
             className="first-letter:text-5xl first-letter:font-heading first-letter:text-[#FFD700] first-letter:mr-2 first-letter:float-left"
         >
-            Bitotsav is a grand celebration of India's rich cultural heritage, bringing together students from all walks of life to revel in the vibrant essence of tradition and creativity.
+            Bitotsav, the annual socio-cultural festival of BIT Mesra, began its journey in 1992. What started as a humble initiative by a small group of students has now evolved into one of Eastern India's largest extravaganzas.
         </motion.p>
         <motion.p
             initial={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
         >
-            BITOTSAV offers a plethora of events that not only entertain but also promote meaningful societal causes. As the festival continues to grow in scale and impact, BITOTSAV 2026 is set to be bigger and more spectacular than ever! It features electrifying performances, thrilling competitions, mesmerizing celebrity nights, and an unforgettable fusion of music, dance, and entertainment.
+            Spanning five glorious days, Bitotsav is a melting pot of culture, talent, and creativity. From the soul-stirring melodies of <strong>Heritage Nite</strong> to the pulsating beats of <strong>Band Nite</strong> and <strong>EDM Nite</strong>, and finally the star-studded <strong>Pro Nite</strong>, every moment is a celebration. It is not just a fest; it is a legacy passed down through generations of BITians.
         </motion.p>
       </div>
 

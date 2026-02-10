@@ -7,18 +7,20 @@ import { EventCard } from "@/components/EventCard";
 import { Event } from "@/types";
 import { cn } from "@/lib/utils";
 
-// Static data based on fetched content
+// Static data based on researched content
 const events: Event[] = [
-  { id: "1", name: "DANCE SAGA", category: "Flagship", venue: "GP BIRLA", organizer: "Dance club" },
+  { id: "1", name: "DANCE SAGA", category: "Flagship", venue: "GP BIRLA", organizer: "Dance Club" },
   { id: "2", name: "BATTLE OF BANDS", category: "Flagship", venue: "MAIN STAGE", organizer: "Music Club" },
-  { id: "3", name: "SQUID GAMES", category: "Flagship", venue: "OAT", organizer: "Rotaract" },
-  { id: "4", name: "Race Rumble", category: "Informal", venue: "SAC", organizer: "NCC" },
-  { id: "5", name: "ELECTRONICS BINGO", category: "Informal", venue: "Bio Lab", organizer: "ECESoc" },
-  { id: "6", name: "HERA PHERI PHIR SE", category: "Formal", venue: "Outdoor", organizer: "BIOTS" },
-  { id: "7", name: "BYTEHUNT", category: "Informal", venue: "233A & 235", organizer: "EEESoc" },
-  { id: "8", name: "WHERE IN BIT?", category: "Informal", venue: "216 & 217", organizer: "IEEE" },
-  { id: "9", name: "TAKESHI'S CASTLE", category: "Formal", venue: "SHORBAGH", organizer: "Leo" },
+  { id: "3", name: "NATSAMRAT", category: "Flagship", venue: "OAT", organizer: "Dramatics Society" },
+  { id: "4", name: "SQUID GAMES", category: "Informal", venue: "OAT", organizer: "Rotaract" },
+  { id: "5", name: "Race Rumble", category: "Informal", venue: "SAC", organizer: "NCC" },
+  { id: "6", name: "ELECTRONICS BINGO", category: "Informal", venue: "Bio Lab", organizer: "ECESoc" },
+  { id: "7", name: "HERA PHERI PHIR SE", category: "Formal", venue: "Outdoor", organizer: "BIOTS" },
+  { id: "8", name: "robolution", category: "Formal", venue: "233A & 235", organizer: "Robolution" },
+  { id: "9", name: "TAKESHI'S CASTLE", category: "Informal", venue: "SHORBAGH", organizer: "Leo" },
   { id: "10", name: "Hand 'N' Brain", category: "Formal", venue: "219 & 220", organizer: "IETE" },
+  { id: "11", name: "Heritage Nite", category: "Flagship", venue: "MAIN STAGE", organizer: "Core Team" },
+  { id: "12", name: "Pro Nite", category: "Flagship", venue: "MAIN STAGE", organizer: "Core Team" },
 ];
 
 const categories = ["All", "Flagship", "Formal", "Informal"];
