@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, Users, Zap, Music, Mic } from "lucide-react";
+import { ArrowRight, Calendar, Users, Zap, Music, Mic, ScrollText } from "lucide-react";
 import { cn } from "@/lib/utils";
+import EnergyBeam from "@/components/ui/energy-beam";
 import { FocusRail, FocusRailItem } from "@/components/ui/focus-rail";
 import { LogoCloud } from "@/components/ui/logo-cloud-4";
-import AnimationPage from "@/components/ui/hero-ascii-one";
 
 const features = [
   {
@@ -74,8 +74,80 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#050A1F]">
       {/* Hero Section */}
-      <section className="relative min-h-screen">
-        <AnimationPage />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 bg-black">
+        {/* Energy Beam Background */}
+        <div className="absolute inset-0 z-0">
+             <EnergyBeam className="opacity-80" />
+             {/* Overlay to blend with theme */}
+             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#050A1F]" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto w-full text-center">
+          {/* Animated Title */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-6 relative"
+          >
+            <h1 className="text-6xl md:text-9xl font-bold font-heading text-[#FFD700] tracking-wider relative z-10 drop-shadow-[0_0_25px_rgba(255,215,0,0.3)]">
+              BITOTSAV <span className="text-[#C5A059]">&apos;26</span>
+            </h1>
+            {/* Subtle Glow behind title */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#FFD700]/10 blur-[100px] rounded-full -z-10" />
+          </motion.div>
+
+          {/* Thematic Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="space-y-4 mb-10"
+          >
+            <div className="flex items-center justify-center space-x-4">
+               <div className="h-px w-12 bg-[#C5A059]/60"></div>
+               <p className="text-xl md:text-2xl text-[#E0D8C0] font-serif tracking-[0.2em] uppercase">
+                  The 35th Edition
+               </p>
+               <div className="h-px w-12 bg-[#C5A059]/60"></div>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold font-heading text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#F4E4BC] to-[#C5A059] drop-shadow-sm">
+              GAATHA: The Endless Saga
+            </h2>
+          </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg md:text-2xl text-[#C5A059]/80 max-w-3xl mx-auto mb-12 leading-relaxed font-serif"
+            >
+              Where distinct tales converge into one legendary narrative. <br/>
+              Witness the grand unification of Culture, Sports, and Technology.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            >
+              <Link
+                href="/events"
+                className="group px-8 py-4 bg-[#800020] hover:bg-[#A00028] text-[#FFD700] border border-[#C5A059] rounded-sm font-bold text-lg flex items-center space-x-3 transition-all duration-300 shadow-[0_0_20px_rgba(128,0,32,0.4)] hover:shadow-[0_0_30px_rgba(128,0,32,0.6)]"
+              >
+                <span>Explore The Saga</span>
+                <ScrollText className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              </Link>
+              <Link
+                href="/about"
+                className="px-8 py-4 bg-transparent hover:bg-[#C5A059]/10 text-[#E0D8C0] border border-[#C5A059]/30 rounded-sm font-medium text-lg flex items-center space-x-2 transition-all duration-300 backdrop-blur-sm font-serif"
+              >
+                <span>Our Legacy</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
+        </div>
       </section>
 
       {/* Focus Rail Gallery Section */}

@@ -17,8 +17,8 @@ export default function AboutContent() {
   return (
     <>
       <SectionHeader 
-        title="Our Legacy" 
-        subtitle="A journey of culture, technology, and endless memories spanning over three decades."
+        title="System_Legacy" 
+        subtitle="Operational history and user engagement metrics."
       />
 
       {/* Stats Grid */}
@@ -30,15 +30,15 @@ export default function AboutContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="text-center p-6 rounded-lg bg-[#0A1025] border border-[#C5A059]/20 hover:bg-[#151b33] transition-all duration-300 hover:border-[#FFD700]/40 group"
+            className="text-center p-6 bg-neutral-900/50 border border-white/10 hover:border-white/30 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#050A1F] border border-[#C5A059]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <stat.icon className={cn("w-6 h-6", stat.color)} />
+            <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-black border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                <stat.icon className="w-5 h-5 text-white" />
             </div>
-            <div className="text-3xl md:text-4xl font-bold font-heading text-[#E0D8C0] mb-2 group-hover:text-[#FFD700] transition-colors">
+            <div className="text-3xl md:text-4xl font-bold font-mono text-white mb-2 group-hover:text-neutral-300 transition-colors tracking-tighter">
               {stat.value}
             </div>
-            <div className="text-sm text-[#C5A059]/60 font-bold tracking-widest uppercase font-serif">
+            <div className="text-xs text-neutral-500 font-mono uppercase tracking-widest">
               {stat.label}
             </div>
           </motion.div>
@@ -46,37 +46,44 @@ export default function AboutContent() {
       </div>
 
       {/* Story Section */}
-      <div className="max-w-4xl mx-auto mb-24 space-y-8 text-lg text-[#C5A059]/80 leading-relaxed font-serif text-justify">
-        <motion.p
+      <div className="max-w-4xl mx-auto mb-24 space-y-8 text-sm md:text-base text-neutral-400 leading-relaxed font-mono text-justify">
+        <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="first-letter:text-5xl first-letter:font-heading first-letter:text-[#FFD700] first-letter:mr-2 first-letter:float-left"
+            className="border-l-2 border-white/20 pl-6"
         >
-            Bitotsav, the annual socio-cultural festival of BIT Mesra, began its journey in 1992. What started as a humble initiative by a small group of students has now evolved into one of Eastern India&apos;s largest extravaganzas.
-        </motion.p>
+            <p className="mb-4">
+              <span className="text-white font-bold">LOG_ENTRY_1992:</span> Bitotsav initialization complete. Origin: BIT Mesra.
+              Evolution status: Continuous. Current state: Eastern India&apos;s premier technical-cultural interface.
+            </p>
+        </motion.div>
         <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
         >
-            Spanning five glorious days, Bitotsav is a melting pot of culture, talent, and creativity. From the soul-stirring melodies of <strong>Heritage Nite</strong> to the pulsating beats of <strong>Band Nite</strong> and <strong>EDM Nite</strong>, and finally the star-studded <strong>Pro Nite</strong>, every moment is a celebration. It is not just a fest; it is a legacy passed down through generations of BITians.
+            <span className="text-white">MODULES_LOADED:</span> <strong>Heritage_Nite</strong>, <strong>Band_Nite</strong>, <strong>EDM_Nite</strong>, <strong>Pro_Nite</strong>.
+            <br/><br/>
+            Bitotsav is not merely a festival; it is a synchronized execution of talent, creativity, and legacy code passed down through generations of BITians.
         </motion.p>
       </div>
 
       {/* Night Events Teaser */}
-      <div className="max-w-5xl mx-auto rounded-xl overflow-hidden relative border border-[#C5A059]/30">
-        <div className="absolute inset-0 bg-[#800020] opacity-90 mixing-blend-multiply" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30" />
+      <div className="max-w-5xl mx-auto border border-white/10 bg-neutral-950 relative overflow-hidden group">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10" />
         <div className="relative z-10 p-12 text-center">
-             <h3 className="text-3xl font-bold font-heading text-[#FFD700] mb-6">Star Nights</h3>
-             <p className="text-xl text-[#E0D8C0] mb-8 max-w-2xl mx-auto font-serif italic">
-                Witness the magic of "Abhinandan: Ghazal Night" featuring renowned artists like Neeraj Gandhi. An evening filled with poetic charm and heartfelt lyrics waiting for you.
+             <div className="inline-block border border-white/20 px-3 py-1 mb-6">
+                <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest">UPCOMING_TRANSMISSION</span>
+             </div>
+             <h3 className="text-3xl font-bold font-heading text-white mb-6">Star Nights</h3>
+             <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto font-mono">
+                &quot;Abhinandan: Ghazal Night&quot; protocol initiated. Artist: Neeraj Gandhi.
              </p>
-             <div className="inline-block px-8 py-3 rounded-sm border border-[#FFD700] text-[#FFD700] font-bold uppercase tracking-widest hover:bg-[#FFD700] hover:text-[#800020] transition-all duration-300">
-                Coming Soon
+             <div className="inline-block px-8 py-3 bg-white text-black font-bold font-mono text-xs uppercase tracking-widest hover:bg-neutral-200 transition-colors">
+                AWAITING_SIGNAL
              </div>
         </div>
       </div>

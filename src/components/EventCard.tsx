@@ -13,46 +13,51 @@ export function EventCard({ event }: EventCardProps) {
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.3 }}
-      className="group relative overflow-hidden rounded-sm bg-[#0A1025] border border-[#C5A059]/30 hover:bg-[#151b33] transition-all duration-300 hover:border-[#FFD700]/60 hover:shadow-[0_4px_20px_rgba(197,160,89,0.15)] flex flex-col h-full"
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className="group relative overflow-hidden bg-neutral-900 border border-white/10 hover:border-white/40 transition-all duration-300 flex flex-col h-full"
     >
-      {/* Decorative Corner */}
-      <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-bl from-[#C5A059]/20 to-transparent" />
+      {/* Tech Overlay */}
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none" />
+      <div className="absolute top-0 right-0 p-2 opacity-50">
+        <div className="w-2 h-2 bg-white/20 rounded-full" />
+      </div>
       
       <div className="p-6 relative z-10 flex flex-col h-full">
         <div className="flex justify-between items-start mb-4">
           <span className={cn(
-            "px-3 py-1 rounded-sm text-xs font-bold font-serif uppercase tracking-wider border",
-            event.category === "Flagship" ? "bg-[#800020]/20 text-[#FFD700] border-[#FFD700]/50" :
-            event.category === "Formal" ? "bg-[#0A1F45]/30 text-[#A0C4FF] border-[#A0C4FF]/30" :
-            "bg-[#1A3A2A]/30 text-[#90EE90] border-[#90EE90]/30"
+            "px-2 py-1 text-[10px] font-mono uppercase tracking-widest border",
+            event.category === "Flagship" ? "bg-white/10 text-white border-white/20" :
+            event.category === "Formal" ? "bg-transparent text-neutral-400 border-neutral-700" :
+            "bg-neutral-800 text-neutral-500 border-neutral-800"
           )}>
             {event.category}
           </span>
-          <Scroll className="w-5 h-5 text-[#C5A059]/40 group-hover:text-[#FFD700] transition-colors duration-300" />
+          <div className="w-4 h-4 text-neutral-600 group-hover:text-white transition-colors duration-300">
+            <Sparkles className="w-full h-full" />
+          </div>
         </div>
         
-        <h3 className="text-xl font-bold font-heading text-[#E0D8C0] mb-2 group-hover:text-[#FFD700] transition-colors tracking-wide">
+        <h3 className="text-xl font-bold font-mono text-white mb-2 group-hover:text-neutral-200 transition-colors tracking-tight">
           {event.name}
         </h3>
         
-        <div className="mt-auto space-y-3 pt-4 font-serif">
-          <div className="flex items-center space-x-2 text-sm text-[#C5A059]/80">
-            <Users className="w-4 h-4 text-[#800020]" />
+        <div className="mt-auto space-y-3 pt-4 font-mono text-xs">
+          <div className="flex items-center space-x-2 text-neutral-400">
+            <Users className="w-3 h-3" />
             <span>{event.organizer}</span>
           </div>
-          <div className="flex items-center space-x-2 text-sm text-[#C5A059]/80">
-            <MapPin className="w-4 h-4 text-[#C5A059]" />
+          <div className="flex items-center space-x-2 text-neutral-400">
+            <MapPin className="w-3 h-3" />
             <span>{event.venue}</span>
           </div>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-[#C5A059]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 text-right">
-            <span className="text-sm text-[#FFD700] inline-flex items-center space-x-2 font-bold uppercase tracking-widest text-[10px]">
-                <span>Open Scroll</span>
+        <div className="mt-4 pt-4 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 text-right">
+            <span className="text-[10px] text-white inline-flex items-center space-x-2 font-mono uppercase tracking-widest">
+                <span>EXECUTE_PROTOCOL</span>
                 <ArrowRight className="w-3 h-3" />
             </span>
         </div>

@@ -33,13 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cinzel.variable} ${playfair.variable} ${lato.variable} antialiased bg-[#050A1F] text-[#E0D8C0] selection:bg-[#800020]/30 selection:text-white overflow-x-hidden`}
+        className={`${cinzel.variable} ${playfair.variable} ${lato.variable} antialiased bg-black text-white selection:bg-white selection:text-black overflow-x-hidden font-mono`}
       >
-        {/* Texture Overlay */}
-        <div className="fixed inset-0 -z-10 h-full w-full opacity-30 pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }}></div>
+        {/* Tech Overlay */}
+        <div className="fixed inset-0 -z-10 h-full w-full opacity-5 pointer-events-none" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }}></div>
         
-        {/* Gradient Mesh */}
-        <div className="fixed inset-0 -z-20 h-full w-full bg-[#050A1F] [background:radial-gradient(125%_125%_at_50%_10%,#1A0505_40%,#050A1F_100%)]"></div>
+        {/* Grid Background */}
+        <div className="fixed inset-0 -z-20 h-full w-full bg-black bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
         <Navbar />
         <main className="min-h-screen pt-20">

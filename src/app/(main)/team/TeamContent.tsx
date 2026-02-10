@@ -25,12 +25,17 @@ export default function TeamContent() {
   return (
     <>
       <SectionHeader 
-        title="Council of Leaders" 
-        subtitle="The dedicated individuals who steer the ship through stormy seas."
+        title="System_Admins" 
+        subtitle="Core processors and protocol maintainers."
       />
 
-      <div className="max-w-7xl mx-auto mb-20">
-        <h3 className="text-2xl font-bold font-serif text-[#FFD700] mb-8 text-center uppercase tracking-widest border-b border-[#C5A059]/30 pb-4 inline-block w-full">Core Committee</h3>
+      <div className="max-w-7xl mx-auto mb-20 px-4">
+        <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
+            <div className="h-2 w-2 bg-white" />
+            <h3 className="text-sm font-mono text-white uppercase tracking-widest">
+                Core_Kernel_Level_0
+            </h3>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {coreTeam.map((member, i) => (
             <TeamMemberCard key={i} member={member} />
@@ -38,8 +43,13 @@ export default function TeamContent() {
         </div>
       </div>
 
-       <div className="max-w-7xl mx-auto">
-        <h3 className="text-2xl font-bold font-serif text-[#FFD700] mb-8 text-center uppercase tracking-widest border-b border-[#C5A059]/30 pb-4 inline-block w-full">Technical Team</h3>
+       <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
+            <div className="h-2 w-2 bg-neutral-500" />
+            <h3 className="text-sm font-mono text-neutral-400 uppercase tracking-widest">
+                Dev_Ops_Unit
+            </h3>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {developers.map((member, i) => (
             <TeamMemberCard key={i} member={member} />

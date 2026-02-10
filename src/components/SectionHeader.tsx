@@ -24,41 +24,32 @@ export function SectionHeader({
       className
     )}>
       <motion.h2 
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold font-heading mb-6 tracking-wide text-[#FFD700] uppercase"
+        transition={{ duration: 0.4 }}
+        className="text-4xl md:text-6xl font-bold font-heading mb-4 tracking-tighter text-white uppercase"
       >
         {title}
       </motion.h2>
       {subtitle && (
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-[#C5A059] max-w-2xl mx-auto leading-relaxed font-serif italic"
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="flex flex-col gap-2"
         >
-          {subtitle}
-        </motion.p>
+          <div className={cn(
+             "h-px w-24 bg-white/20 mb-2",
+             align === "center" && "mx-auto",
+             align === "right" && "ml-auto"
+          )} />
+          <p className="text-sm md:text-base text-neutral-400 font-mono tracking-wide uppercase">
+            {subtitle}
+          </p>
+        </motion.div>
       )}
-      <motion.div 
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className={cn(
-          "h-1 w-32 bg-gradient-to-r from-transparent via-[#800020] to-transparent rounded-full mt-6 opacity-80",
-          align === "center" && "mx-auto",
-          align === "right" && "ml-auto"
-        )}
-      />
-      <div className={cn(
-        "h-[1px] w-16 bg-[#C5A059] mt-1 opacity-50",
-        align === "center" && "mx-auto",
-        align === "right" && "ml-auto"
-      )}></div>
     </div>
   );
 }

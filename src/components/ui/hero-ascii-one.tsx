@@ -80,15 +80,16 @@ export default function AnimationPage() {
               title.includes('unicorn') ||
               href.includes('unicorn.studio')
             ) {
-              el.style.display = 'none';
-              el.style.visibility = 'hidden';
-              el.style.opacity = '0';
-              el.style.pointerEvents = 'none';
-              el.style.position = 'absolute';
-              el.style.left = '-9999px';
-              el.style.top = '-9999px';
+              const element = el as HTMLElement;
+              element.style.display = 'none';
+              element.style.visibility = 'hidden';
+              element.style.opacity = '0';
+              element.style.pointerEvents = 'none';
+              element.style.position = 'absolute';
+              element.style.left = '-9999px';
+              element.style.top = '-9999px';
               // Also try to remove it
-              try { el.remove(); } catch(e) {}
+              try { element.remove(); } catch(e) {}
             }
           });
         });

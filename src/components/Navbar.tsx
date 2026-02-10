@@ -3,18 +3,20 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Scroll, Calendar, Users, Info, Crown, Terminal } from "lucide-react";
+import { Menu, X, Terminal, Code, Cpu, Globe, Hash } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { name: "Home", href: "/", icon: Scroll },
+  { name: "Home", href: "/", icon: Terminal },
   { name: "Events", href: "/events", icon: Calendar },
   { name: "Team", href: "/team", icon: Users },
   { name: "About", href: "/about", icon: Info },
-  { name: "Sponsors", href: "/sponsors", icon: Crown },
-  { name: "Devs", href: "/developers", icon: Terminal },
+  { name: "Sponsors", href: "/sponsors", icon: DollarSign },
+  { name: "Devs", href: "/developers", icon: Code },
 ];
+
+import { Calendar, Users, Info, DollarSign } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,25 +34,30 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-4 left-4 right-4 z-50 transition-all duration-500 rounded-xl border border-transparent",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         scrolled 
-            ? "bg-[#050A1F]/80 backdrop-blur-md border-[#C5A059]/30 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" 
-            : "bg-transparent"
+            ? "bg-black/80 backdrop-blur-md border-white/10 py-3" 
+            : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#800020] to-[#500014] rounded-lg border border-[#C5A059]/50 overflow-hidden transform group-hover:rotate-45 transition-transform duration-500">
-              <span className="text-xl font-bold font-heading text-[#FFD700] transform group-hover:-rotate-45 transition-transform duration-500">B</span>
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-8 h-8 flex items-center justify-center border border-white/20 bg-white/5 overflow-hidden group-hover:border-white/50 transition-colors">
+              <span className="text-lg font-mono font-bold text-white">B</span>
             </div>
-            <span className="text-2xl font-bold font-heading text-gradient-gold tracking-widest uppercase">
-              Bitotsav
-            </span>
+            <div className="flex flex-col">
+                <span className="text-lg font-bold font-mono tracking-tighter text-white leading-none">
+                BITOTSAV<span className="text-neutral-500">_26</span>
+                </span>
+                <span className="text-[10px] font-mono text-neutral-500 tracking-[0.2em] leading-none mt-1">
+                    SYSTEM.ONLINE
+                </span>
+            </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -58,18 +65,13 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "relative text-sm font-bold tracking-wider uppercase transition-colors duration-300 flex items-center space-x-1 font-serif",
-                    isActive ? "text-[#FFD700]" : "text-[#C5A059] hover:text-[#FFD700]"
+                    "relative px-4 py-2 text-xs font-mono tracking-widest uppercase transition-all duration-300 flex items-center space-x-2 border border-transparent hover:border-white/10 hover:bg-white/5",
+                    isActive ? "text-white bg-white/5 border-white/10" : "text-neutral-400 hover:text-white"
                   )}
                 >
-                  <item.icon className={cn("w-4 h-4", isActive ? "text-[#FFD700]" : "text-[#C5A059]")} />
                   <span>{item.name}</span>
                   {isActive && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.8)]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
+                    <div className="absolute top-1/2 right-2 -translate-y-1/2 w-1 h-1 bg-white rounded-full animate-pulse" />
                   )}
                 </Link>
               );
@@ -80,9 +82,9 @@ export function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#C5A059] hover:text-[#FFD700] focus:outline-none"
+              className="text-white hover:text-neutral-300 focus:outline-none p-2 border border-white/10 bg-white/5"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -95,23 +97,25 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#050A1F]/95 backdrop-blur-xl border-t border-[#C5A059]/30 overflow-hidden rounded-b-xl"
+            className="md:hidden bg-black border-b border-white/10 overflow-hidden"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2">
+            <div className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "block px-4 py-3 rounded-lg text-base font-bold font-serif uppercase tracking-wider transition-all duration-200 flex items-center space-x-3",
+                    "block px-4 py-3 text-sm font-mono uppercase tracking-wider transition-colors border-l-2",
                     pathname === item.href
-                      ? "bg-[#800020]/30 text-[#FFD700] border border-[#C5A059]/50"
-                      : "text-[#C5A059] hover:bg-[#C5A059]/10 hover:text-[#FFD700]"
+                      ? "border-white bg-white/5 text-white"
+                      : "border-transparent text-neutral-400 hover:text-white hover:bg-white/5"
                   )}
                 >
-                  <item.icon className="w-5 h-5" />
-                  <span>{item.name}</span>
+                  <div className="flex items-center space-x-3">
+                      <item.icon className="w-4 h-4" />
+                      <span>{item.name}</span>
+                  </div>
                 </Link>
               ))}
             </div>

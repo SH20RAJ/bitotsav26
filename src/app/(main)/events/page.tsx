@@ -33,14 +33,14 @@ export default function EventsPage() {
     : events.filter(event => event.category === filter);
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-[#050A1F] relative">
-       {/* Background Decoration */}
-       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#800020]/10 rounded-full blur-3xl pointer-events-none" />
-       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black relative font-mono text-white">
+       {/* Tech Background */}
+       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none" />
+       <div className="absolute top-0 left-0 w-full h-px bg-white/10" />
 
       <SectionHeader 
-        title="The Chronicles" 
-        subtitle="Tales of valor, creativity, and intellect unfolded across the realm."
+        title="Event_Logs" 
+        subtitle="System activities and competitive modules."
       />
 
       {/* Filter Tabs */}
@@ -50,13 +50,16 @@ export default function EventsPage() {
             key={category}
             onClick={() => setFilter(category)}
             className={cn(
-              "px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-wider transition-all duration-300 border font-serif",
+              "px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 border font-mono relative overflow-hidden group",
               filter === category
-                ? "bg-[#800020] text-[#FFD700] border-[#FFD700] shadow-[0_0_15px_rgba(128,0,32,0.5)]"
-                : "bg-transparent text-[#C5A059] border-[#C5A059]/30 hover:bg-[#C5A059]/10 hover:text-[#FFD700]"
+                ? "bg-white text-black border-white"
+                : "bg-transparent text-neutral-500 border-neutral-800 hover:border-neutral-600 hover:text-white"
             )}
           >
-            {category}
+            <span className="relative z-10">{category}</span>
+            {filter === category && (
+                 <div className="absolute inset-0 bg-white z-0" />
+            )}
           </button>
         ))}
       </div>
@@ -64,7 +67,7 @@ export default function EventsPage() {
       {/* Event Grid */}
       <motion.div 
         layout
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
       >
         <AnimatePresence mode="popLayout">
           {filteredEvents.map((event) => (
