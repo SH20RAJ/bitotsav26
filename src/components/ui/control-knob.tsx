@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent, MotionValue } from "framer-motion";
 
 interface ReactorKnobProps {
     className?: string;
@@ -39,13 +39,10 @@ export default function ReactorKnob({ className }: ReactorKnobProps) {
   // Light Opacity based on the RAW mouse position (Instant Feedback)
   const lightOpacity = useTransform(rawRotation, [MIN_DEG, MAX_DEG], [0.05, 0.5]);
   
-  // Light Blur Radius (Grows as energy increases)
-  const lightBlur = useTransform(rawRotation, [MIN_DEG, MAX_DEG], ["0px", "20px"]);
-
   // --- INTERACTION LOGIC ---
   const knobRef = useRef<HTMLDivElement>(null);
 
-  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+  const handlePointerDown = useCallback(() => {
     setIsDragging(true);
     document.body.style.cursor = "grabbing";
     document.body.style.userSelect = "none";
@@ -65,7 +62,7 @@ export default function ReactorKnob({ className }: ReactorKnobProps) {
       const y = e.clientY - centerY;
      
       // Calculate Angle
-      let rads = Math.atan2(y, x);
+      const rads = Math.atan2(y, x);
       let degs = rads * (180 / Math.PI) + 90;
 
       // Normalize
@@ -175,7 +172,7 @@ export default function ReactorKnob({ className }: ReactorKnobProps) {
   );
 }
 
-function TickMark({ currentRotation, angle }: { currentRotation: any, angle: number }) {
+function TickMark({ currentRotation, angle }: { currentRotation: MotionValue<number>, angle: number }) {
     const opacity = useTransform(currentRotation, (r: number) => {
         return r >= angle ? 1 : 0.2;
     });
@@ -194,7 +191,7 @@ function TickMark({ currentRotation, angle }: { currentRotation: any, angle: num
     );
 }
 
-function DisplayValue({ value }: { value: any }) {
+function DisplayValue({ value }: { value: MotionValue<number> }) {
     const [display, setDisplay] = useState(37); // Default to 37
     useMotionValueEvent(value, "change", (latest) => setDisplay(Math.round(latest)));
     
