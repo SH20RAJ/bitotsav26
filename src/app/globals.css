@@ -26,7 +26,7 @@
   --secondary-foreground: oklch(0.985 0 0); /* White */
   --accent: oklch(0.985 0 0); /* White */
   --accent-foreground: oklch(0.145 0 0); /* Black */
-  
+
   --radius: 0rem; /* Sharp corners for tech feel */
 }
 
@@ -34,36 +34,58 @@
   --font-lato: 'Inter', sans-serif;
   --font-cinzel: 'JetBrains Mono', monospace;
   --font-playfair: 'JetBrains Mono', monospace;
-  
+
   --background: #050505;
   --foreground: #ffffff;
-  
+
   --card: #0a0a0a;
   --card-foreground: #ffffff;
-  
+
   --popover: #0a0a0a;
   --popover-foreground: #ffffff;
-  
+
   --primary: #ffffff;
   --primary-foreground: #000000;
-  
+
   --secondary: #262626;
   --secondary-foreground: #ffffff;
-  
+
   --muted: #262626;
   --muted-foreground: #a3a3a3;
-  
+
   --accent: #ffffff;
   --accent-foreground: #000000;
-  
+
   --destructive: #7f1d1d;
   --destructive-foreground: #ffffff;
-  
+
   --border: #262626;
   --input: #262626;
   --ring: #ffffff;
-  
+
   --radius: 0rem;
+
+  --color-primary: #6366f1;
+
+  --color-dark: #131313;
+
+  --color-neutral-100: #f5f5f5;
+
+  --color-neutral-200: #e5e5e5;
+
+  --color-neutral-300: #d4d4d4;
+
+  --color-neutral-800: #262626;
+
+  --size-container: 1400px;
+
+  --container-padding: 2em;
+
+  --section-padding: 4em;
+
+  --gap: 1.5em;
+
+  --cubic-default: cubic-bezier(0.65, 0.05, 0, 1);
 }
 
 body {
@@ -168,6 +190,17 @@ p, span, div {
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --cubic-default: var(----cubic-default);
+  --gap: var(----gap);
+  --section-padding: var(----section-padding);
+  --container-padding: var(----container-padding);
+  --size-container: var(----size-container);
+  --color-color-neutral-800: var(----color-neutral-800);
+  --color-color-neutral-300: var(----color-neutral-300);
+  --color-color-neutral-200: var(----color-neutral-200);
+  --color-color-neutral-100: var(----color-neutral-100);
+  --color-color-dark: var(----color-dark);
+  --color-color-primary: var(----color-primary);
 }
 
 .dark {
@@ -211,7 +244,7 @@ p, span, div {
   body {
     @apply bg-background text-foreground;
   }
-  
+
   body::before {
     content: "";
     position: fixed;
