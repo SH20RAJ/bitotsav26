@@ -26,16 +26,16 @@ export default function EventsList() {
       />
 
       {/* Filters */}
-      <div className="flex justify-center mb-12 flex-wrap gap-4">
+      <div className="flex justify-center mb-20 flex-wrap gap-3">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
             className={cn(
-              "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border border-transparent",
+              "px-8 py-3 rounded-full text-xs font-medium tracking-widest uppercase transition-all duration-500 border backdrop-blur-sm",
               activeCategory === category
-                ? "bg-violet-600 text-white shadow-[0_0_15px_rgba(139,92,246,0.5)] border-violet-500"
-                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border-white/10"
+                ? "bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] transform scale-105"
+                : "bg-neutral-900/40 text-neutral-400 border-white/5 hover:border-white/20 hover:text-white"
             )}
           >
             {category}
@@ -46,7 +46,7 @@ export default function EventsList() {
       {/* Events Grid */}
       <motion.div 
         layout
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4"
       >
         <AnimatePresence mode="popLayout">
           {filteredEvents.map((event) => (

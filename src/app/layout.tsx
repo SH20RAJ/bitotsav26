@@ -1,23 +1,32 @@
-import type { Metadata } from "next";
-import { Cinzel, Playfair_Display, Lato } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
+const cinzel = localFont({
+  src: "../../public/fonts/Cinzel-latin-normal-400900.woff2",
   variable: "--font-cinzel",
+  display: "swap",
+  weight: "400 900",
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+const playfair = localFont({
+  src: "../../public/fonts/PlayfairDisplay-latin-normal-400900.woff2",
   variable: "--font-playfair",
+  display: "swap",
+  weight: "400 900",
 });
 
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
+const lato = localFont({
+  src: [
+    { path: "../../public/fonts/Lato-latin-normal-100.woff2", weight: "100", style: "normal" },
+    { path: "../../public/fonts/Lato-latin-normal-300.woff2", weight: "300", style: "normal" },
+    { path: "../../public/fonts/Lato-latin-normal-400.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Lato-latin-normal-700.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/Lato-latin-normal-900.woff2", weight: "900", style: "normal" },
+  ],
   variable: "--font-lato",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
