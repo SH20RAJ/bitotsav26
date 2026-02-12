@@ -4,7 +4,7 @@ import { LogoCloud } from "@/components/ui/logo-cloud-4";
 
 export function Sponsors() {
   return (
-    <section className="py-20 border-t border-[#C5A059]/10 bg-[#070D24]">
+    <section className="py-10 border-t border-[#C5A059]/10 bg-[#070D24]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
           <h3 className="text-xl font-bold font-serif tracking-widest uppercase text-[#C5A059]/60">Supported By The Kingdom</h3>
       </div>

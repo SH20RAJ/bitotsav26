@@ -19,25 +19,25 @@ export function Navbar() {
       id: "events", 
       name: "Events", 
       link: "/events", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Calendar_Icon_macOS_Big_Sur.png/1024px-Calendar_Icon_macOS_Big_Sur.png?20200624021703"
+      icon: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Calendar_Icon_macOS_Big_Sur.png"
     },
     { 
       id: "sponsors", 
       name: "Sponsors", 
       link: "/sponsors", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Contacts_Icon_macOS_Big_Sur.png/1024px-Contacts_Icon_macOS_Big_Sur.png?20200810141934"
+      icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Contacts_Icon_macOS_Big_Sur.png"
     },
     { 
       id: "about", 
       name: "About", 
       link: "/about", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Safari_Browser_Icon_macOS_Big_Sur.png/1024px-Safari_Browser_Icon_macOS_Big_Sur.png?20200623201438" 
+      icon: "https://upload.wikimedia.org/wikipedia/commons/5/59/Safari_Browser_Icon_macOS_Big_Sur.png" 
     },
     { 
       id: "help", 
       name: "Help", 
       link: "/helpdesk", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/System_Preferences_Icon_macOS_Big_Sur.png/1024px-System_Preferences_Icon_macOS_Big_Sur.png?20200623201502"
+      icon: "https://upload.wikimedia.org/wikipedia/commons/2/29/System_Preferences_Icon_macOS_Big_Sur.png"
     },
   ];
 
