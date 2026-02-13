@@ -89,7 +89,7 @@ export default function RootLayout({
             </div>
 
             <Navbar />
-            <main className="min-h-screen pt-20">
+            <main className="min-h-screen">
               {children}
             </main>
             <Footer />
