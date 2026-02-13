@@ -12,49 +12,49 @@ export function Navbar() {
       id: "home", 
       name: "Home", 
       link: "/", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Home&backgroundColor=0a0a0a" 
+      icon: "/icons/home.svg" 
     },
     { 
       id: "events", 
       name: "Events", 
       link: "/events", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Events&backgroundColor=0a0a0a"
+      icon: "/icons/events.svg"
     },
     { 
       id: "schedule", 
       name: "Schedule", 
       link: "/schedule", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Schedule&backgroundColor=0a0a0a"
+      icon: "/icons/schedule.svg"
     },
     { 
       id: "sponsors", 
       name: "Sponsors", 
       link: "/sponsors", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Sponsors&backgroundColor=0a0a0a"
+      icon: "/icons/sponsors.svg"
     },
     { 
       id: "about", 
       name: "About", 
       link: "/about", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=About&backgroundColor=0a0a0a" 
+      icon: "/icons/about.svg" 
     },
     { 
       id: "leaderboard", 
       name: "Leaderboard", 
       link: "/leaderboard", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Leaderboard&backgroundColor=0a0a0a"
+      icon: "/icons/leaderboard.svg"
     },
     { 
       id: "help", 
       name: "Help", 
       link: "/helpdesk", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Help&backgroundColor=0a0a0a"
+      icon: "/icons/help.svg"
     },
     { 
       id: "login", 
       name: "Login", 
       link: "/login", 
-      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=Login&backgroundColor=0a0a0a"
+      icon: "/icons/login.svg"
     },
   ];
 
