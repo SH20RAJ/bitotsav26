@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackClientApp } from "../stack/client";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -44,7 +46,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${cinzel.variable} ${playfair.variable} ${lato.variable} antialiased bg-black text-white selection:bg-white selection:text-black overflow-x-hidden font-mono`}
-      >
+      ><StackProvider app={stackClientApp}><StackTheme>
         {/* Tech Overlay */}
         <div className="fixed inset-0 -z-10 h-full w-full opacity-5 pointer-events-none" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }}></div>
         
@@ -56,7 +58,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-      </body>
+      </StackTheme></StackProvider></body>
     </html>
   );
 }
