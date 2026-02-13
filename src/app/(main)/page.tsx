@@ -24,7 +24,7 @@ export default function Home() {
         "addressCountry": "IN"
       }
     },
-    "image": "https://bitotsav.in/og-main.png"
+    "image": "https://bitotsav.strivio.world/og-main.png"
   };
 
   return (

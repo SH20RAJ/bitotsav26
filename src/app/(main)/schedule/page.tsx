@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Festival Schedule | Bitotsav 2026",
     description: "View the complete three-day timeline of Bitotsav 2026 events.",
-    url: 'https://bitotsav.in/schedule',
+    url: 'https://bitotsav.strivio.world/schedule',
   },
 };
 

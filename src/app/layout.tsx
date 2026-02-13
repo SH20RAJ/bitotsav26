@@ -35,7 +35,7 @@ const lato = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bitotsav.in'),
+  metadataBase: new URL('https://bitotsav.strivio.world'),
   title: {
     default: "Bitotsav 2026 | Gaatha",
     template: "%s | Bitotsav 2026"
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bitotsav 2026 | Gaatha",
     description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
-    url: 'https://bitotsav.in',
+    url: 'https://bitotsav.strivio.world',
     siteName: 'Bitotsav 2026',
     locale: 'en_IN',
     type: 'website',
@@ -87,6 +87,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
+  },
 };
 
 const customTheme = {
@@ -116,14 +121,7 @@ export default function RootLayout({
       >
         <StackProvider app={stackServerApp}>
           <StackTheme theme={customTheme}>
-            {/* Optimized Background Layer */}
-            <div className="fixed inset-0 -z-50 h-full w-full bg-black pointer-events-none overflow-hidden">
-               {/* Grid Pattern */}
-               <div className="absolute inset-0 bg-size-[64px_64px] bg-linear-to-r from-white/2 to-transparent"></div>
-               <div className="absolute inset-0 bg-size-[64px_64px] bg-linear-to-b from-white/2 to-transparent"></div>
-               {/* Ambient Glow */}
-               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-purple-500/5 blur-[120px] rounded-full"></div>
-            </div>
+          
 
             <Navbar />
             <main className="min-h-screen">

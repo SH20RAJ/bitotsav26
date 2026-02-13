@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Partners | Bitotsav 2026",
     description: "Recognizing the corporate partners and sponsors who empower Bitotsav 2026.",
-    url: 'https://bitotsav.in/sponsors',
+    url: 'https://bitotsav.strivio.world/sponsors',
   },
 };
 

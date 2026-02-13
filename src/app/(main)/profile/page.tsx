@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "User Profile | Bitotsav 2026",
     description: "Access your digital pass and manage your Bitotsav 2026 identity.",
-    url: 'https://bitotsav.in/profile',
+    url: 'https://bitotsav.strivio.world/profile',
   },
 };
 

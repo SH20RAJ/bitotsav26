@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/handler/', '/api/'],
     },
-    sitemap: 'https://bitotsav.in/sitemap.xml',
+    sitemap: 'https://bitotsav.strivio.world/sitemap.xml',
   };
 }
