@@ -35,20 +35,57 @@ const lato = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Bitotsav 2026 | Gaatha",
+  metadataBase: new URL('https://bitotsav.in'),
+  title: {
+    default: "Bitotsav 2026 | Gaatha",
+    template: "%s | Bitotsav 2026"
+  },
   description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
   keywords: ["Bitotsav", "2026", "Gaatha", "BIT Mesra", "Cultural Fest", "Technical Fest", "Sports Fest", "The Endless Saga"],
   authors: [{ name: "Bitotsav Team" }],
+  creator: "Bitotsav Team",
+  publisher: "BIT Mesra",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Bitotsav 2026 | Gaatha",
     description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
-    type: "website",
-    locale: "en_IN",
+    url: 'https://bitotsav.in',
+    siteName: 'Bitotsav 2026',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: '/og-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bitotsav 2026 | Gaatha',
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: "Bitotsav 2026 | Gaatha",
     description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
+    creator: '@bitotsav',
+    images: ['/og-main.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

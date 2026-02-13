@@ -2,8 +2,16 @@ import { Metadata } from "next";
 import SponsorsContent from "./SponsorsContent";
 
 export const metadata: Metadata = {
-  title: "Sponsors | Bitotsav 2026",
-  description: "Our partners and sponsors who make Bitotsav 2026 possible.",
+  title: "Our Partners",
+  description: "Recognizing the corporate partners and sponsors who empower Bitotsav 2026: Gaatha.",
+  alternates: {
+    canonical: '/sponsors',
+  },
+  openGraph: {
+    title: "Our Partners | Bitotsav 2026",
+    description: "Recognizing the corporate partners and sponsors who empower Bitotsav 2026.",
+    url: 'https://bitotsav.in/sponsors',
+  },
 };
 
 export default function SponsorsPage() {
