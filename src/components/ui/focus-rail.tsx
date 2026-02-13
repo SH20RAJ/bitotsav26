@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export type FocusRailItem = {
@@ -159,12 +160,14 @@ export function FocusRail({
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src={activeItem.imageSrc}
               alt=""
-              className="h-full w-full object-cover blur-3xl saturate-200"
+              fill
+              className="object-cover blur-xl opacity-20 saturate-150 transition-opacity duration-1000"
+              priority={false}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -173,7 +176,7 @@ export function FocusRail({
       <div className="relative z-10 flex flex-1 flex-col justify-center px-4 md:px-8">
         {/* DRAGGABLE RAIL CONTAINER */}
         <motion.div
-          className="relative mx-auto flex h-[360px] w-full max-w-6xl items-center justify-center perspective-[1200px] cursor-grab active:cursor-grabbing"
+          className="relative mx-auto flex h-[360px] w-full max-w-6xl items-center justify-center perspective-distant cursor-grab active:cursor-grabbing"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.2}
@@ -195,15 +198,15 @@ export function FocusRail({
             const scale = isCenter ? 1 : 0.85;
             const rotateY = offset * -20;
 
-            const opacity = isCenter ? 1 : Math.max(0.1, 1 - dist * 0.5);
-            const blur = isCenter ? 0 : dist * 6;
-            const brightness = isCenter ? 1 : 0.5;
+            const opacity = isCenter ? 1 : Math.max(0.4, 1 - dist * 0.3);
+            const blur = isCenter ? 0 : dist * 2;
+            const brightness = isCenter ? 1 : 0.7;
 
             return (
               <motion.div
                 key={absIndex}
                 className={cn(
-                  "absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl border-t border-white/20 bg-neutral-900 shadow-2xl transition-shadow duration-300",
+                  "absolute aspect-3/4 w-[260px] md:w-[300px] rounded-2xl border-t border-white/20 bg-neutral-900 shadow-2xl transition-shadow duration-300 will-change-transform",
                   isCenter ? "z-20 shadow-white/10" : "z-10"
                 )}
                 initial={false}
@@ -226,14 +229,15 @@ export function FocusRail({
                   if (offset !== 0) setActive((p) => p + offset);
                 }}
               >
-                <img
+                <Image
                   src={item.imageSrc}
                   alt={item.title}
-                  className="h-full w-full rounded-2xl object-cover pointer-events-none"
+                  fill
+                  className="rounded-2xl object-cover pointer-events-none"
                 />
 
                 {/* Lighting layers */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-b from-white/10 to-transparent pointer-events-none" />
                 <div className="absolute inset-0 rounded-2xl bg-black/10 pointer-events-none mix-blend-multiply" />
               </motion.div>
             );

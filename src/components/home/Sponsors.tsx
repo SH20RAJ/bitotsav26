@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const logos = [
   { src: "https://api.dicebear.com/9.x/initials/svg?seed=SBI", alt: "SBI" },
@@ -26,10 +27,12 @@ export function Sponsors() {
             whileHover={{ backgroundColor: "rgba(255,255,255,0.03)" }}
             className="group flex flex-col items-center justify-center p-8 bg-black transition-all duration-300 h-32"
           >
-            <img 
+            <Image 
               src={logo.src} 
               alt={logo.alt} 
-              className="w-16 h-16 object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110" 
+              width={64}
+              height={64}
+              className="object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110 underline-none" 
             />
             <span className="mt-3 text-[8px] font-mono text-neutral-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
               {logo.alt}

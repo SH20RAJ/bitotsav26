@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Music, Zap, Mic } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const features = [
@@ -62,12 +63,13 @@ export function Features() {
             >
               {/* Background Image (Revealed on Hover) */}
               <div className="absolute inset-0 bg-[#0A1025] transition-all duration-500 group-hover:scale-110">
-                  <img 
+                  <Image 
                       src={feature.image} 
                       alt={feature.title} 
-                      className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0" 
+                      fill
+                      className="object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050A1F] via-[#050A1F]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#050A1F] via-[#050A1F]/80 to-transparent" />
               </div>
 
               <div className="absolute inset-0 p-8 flex flex-col justify-end">

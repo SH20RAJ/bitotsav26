@@ -25,7 +25,7 @@ export function Hero() {
                     text="BITOTSAV"
                     colors={['C5A059', 'EBAF3F', 'FFD700', 'DAA520', 'FFA500']}
                     animationForce={80}
-                    particleDensity={5}
+                    particleDensity={10}
                     className="w-full h-full"
                  />
              </div>
