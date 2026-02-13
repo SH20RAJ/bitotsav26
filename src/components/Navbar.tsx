@@ -10,57 +10,59 @@ export function Navbar() {
   const user = useUser();
 
   const navItems = [
-    { 
-      id: "home", 
-      name: "Home", 
-      link: "/", 
-      icon: "/icons/home.svg" 
+    {
+      id: "home",
+      name: "Home",
+      link: "/",
+      icon: "/icons/home.svg",
     },
-    { 
-      id: "events", 
-      name: "Events", 
-      link: "/events", 
-      icon: "/icons/events.svg"
+    {
+      id: "events",
+      name: "Events",
+      link: "/events",
+      icon: "/icons/events.svg",
     },
-    { 
-      id: "schedule", 
-      name: "Schedule", 
-      link: "/schedule", 
-      icon: "/icons/schedule.svg"
+    {
+      id: "schedule",
+      name: "Schedule",
+      link: "/schedule",
+      icon: "/icons/schedule.svg",
     },
-    { 
-      id: "sponsors", 
-      name: "Sponsors", 
-      link: "/sponsors", 
-      icon: "/icons/sponsors.svg"
+    {
+      id: "sponsors",
+      name: "Sponsors",
+      link: "/sponsors",
+      icon: "/icons/sponsors.svg",
     },
-    { 
-      id: "leaderboard", 
-      name: "Leaderboard", 
-      link: "/leaderboard", 
-      icon: "/icons/leaderboard.svg"
+    {
+      id: "leaderboard",
+      name: "Leaderboard",
+      link: "/leaderboard",
+      icon: "/icons/leaderboard.svg",
     },
-    { 
-      id: "help", 
-      name: "Help", 
-      link: "/helpdesk", 
-      icon: "/icons/help.svg"
+    {
+      id: "help",
+      name: "Help",
+      link: "/helpdesk",
+      icon: "/icons/help.svg",
     },
-    ...(user ? [
-      { 
-        id: "profile", 
-        name: "Profile", 
-        link: "/profile", 
-        icon: "/icons/login.svg" // Using login icon for profile for now, or could use help
-      }
-    ] : [
-      { 
-        id: "login", 
-        name: "Login", 
-        link: "/login", 
-        icon: "/icons/login.svg"
-      }
-    ]),
+    ...(user
+      ? [
+          {
+            id: "profile",
+            name: "Profile",
+            link: "/profile",
+            icon: "/icons/profile.svg",
+          },
+        ]
+      : [
+          {
+            id: "login",
+            name: "Login",
+            link: "/login",
+            icon: "/icons/login.svg",
+          },
+        ]),
   ];
 
   const handleAppClick = (appId: string) => {
@@ -70,17 +72,17 @@ export function Navbar() {
     }
   };
 
-  const activeApp = navItems.find(item => item.link === pathname)?.id;
+  const activeApp = navItems.find((item) => item.link === pathname)?.id;
 
   return (
     <div className="fixed bottom-6 inset-x-0 mx-auto z-50 flex justify-center pointer-events-none">
-       <div className="pointer-events-auto">
-          <MacOSDock 
-            apps={navItems} 
-            onAppClick={handleAppClick} 
-            openApps={activeApp ? [activeApp] : []}
-          />
-       </div>
+      <div className="pointer-events-auto">
+        <MacOSDock
+          apps={navItems}
+          onAppClick={handleAppClick}
+          openApps={activeApp ? [activeApp] : []}
+        />
+      </div>
     </div>
   );
 }
