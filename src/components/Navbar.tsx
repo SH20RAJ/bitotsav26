@@ -45,6 +45,12 @@ export function Navbar() {
       link: "/helpdesk", 
       icon: "https://www.svgrepo.com/show/530614/map.svg"
     },
+    { 
+      id: "login", 
+      name: "Login", 
+      link: "/login", 
+      icon: "https://www.svgrepo.com/show/530605/user-id.svg"
+    },
   ];
 
   const handleAppClick = (appId: string) => {
