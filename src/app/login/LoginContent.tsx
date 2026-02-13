@@ -1,24 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { User, Mail, Building2, Ticket } from "lucide-react";
+import { Ticket } from "lucide-react";
+import { SignIn } from "@stackframe/stack";
 
 export default function LoginContent() {
-  const router = useRouter();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    institution: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    localStorage.setItem("bitotsav_user", JSON.stringify(formData));
-    router.push("/profile");
-  };
-
   return (
     <div className="min-h-screen bg-neutral-950 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Effects */}
@@ -41,63 +27,40 @@ export default function LoginContent() {
                 <Ticket className="w-12 h-12 text-white" />
             </div>
             <h1 className="text-2xl font-bold font-mono text-white mb-2 uppercase tracking-tight">Access Control</h1>
-            <p className="text-neutral-500 text-xs font-mono uppercase tracking-widest">Enter Credentials for Digital Pass</p>
+            <p className="text-neutral-500 text-xs font-mono uppercase tracking-widest">Identify Yourself to Secure Pass</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-                <label className="block text-[10px] text-neutral-400 mb-2 uppercase tracking-[0.2em] font-bold">Identity</label>
-                <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
-                    <input 
-                        type="text" 
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="w-full bg-neutral-950 border border-white/10 pl-10 pr-4 py-3 text-white text-sm font-mono focus:outline-none focus:border-white/30 transition-colors placeholder:text-neutral-700" 
-                        placeholder="FULL NAME"
-                    />
-                </div>
-            </div>
-
-            <div>
-                <label className="block text-[10px] text-neutral-400 mb-2 uppercase tracking-[0.2em] font-bold">Comms</label>
-                <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
-                    <input 
-                        type="email" 
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full bg-neutral-950 border border-white/10 pl-10 pr-4 py-3 text-white text-sm font-mono focus:outline-none focus:border-white/30 transition-colors placeholder:text-neutral-700" 
-                        placeholder="EMAIL@ADDRESS.COM"
-                    />
-                </div>
-            </div>
-
-            <div>
-                <label className="block text-[10px] text-neutral-400 mb-2 uppercase tracking-[0.2em] font-bold">Affiliation</label>
-                <div className="relative">
-                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
-                    <input 
-                        type="text" 
-                        required
-                        value={formData.institution}
-                        onChange={(e) => setFormData({...formData, institution: e.target.value})}
-                        className="w-full bg-neutral-950 border border-white/10 pl-10 pr-4 py-3 text-white text-sm font-mono focus:outline-none focus:border-white/30 transition-colors placeholder:text-neutral-700" 
-                        placeholder="INSTITUTION / COMPANY"
-                    />
-                </div>
-            </div>
-
-            <button 
-                type="submit"
-                className="w-full py-4 bg-white text-black font-bold font-mono text-xs uppercase tracking-[0.2em] hover:bg-neutral-200 transition-colors"
-            >
-                Generate_Pass
-            </button>
-        </form>
+        <div className="stack-auth-container">
+          <SignIn />
+        </div>
       </motion.div>
+
+      <style jsx global>{`
+        .stack-auth-container {
+          --stack-primary: #ffffff;
+          --stack-background: transparent;
+          --stack-surface: rgba(255, 255, 255, 0.05);
+          --stack-border: rgba(255, 255, 255, 0.1);
+          --stack-text: #ffffff;
+          --stack-text-muted: rgba(255, 255, 255, 0.5);
+          --stack-radius: 0px;
+        }
+        .stack-auth-container * {
+          font-family: var(--font-mono), monospace !important;
+        }
+        .stack-auth-container button {
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          font-size: 10px !important;
+          border-radius: 0px !important;
+        }
+        .stack-auth-container input {
+          background-color: rgba(0, 0, 0, 0.3) !important;
+          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          border-radius: 0px !important;
+          font-size: 12px !important;
+        }
+      `}</style>
     </div>
   );
 }

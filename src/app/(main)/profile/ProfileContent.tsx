@@ -4,27 +4,23 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Printer, CheckCircle } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { useUser } from "@stackframe/stack";
 
 export default function ProfileContent() {
-  const router = useRouter();
-  const [user, setUser] = useState<{name: string, email: string, institution: string} | null>(null);
+  const user = useUser({ or: "redirect" });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const userData = localStorage.getItem("bitotsav_user");
-    if (!userData) {
-      router.push("/login");
-      return;
+    if (user) {
+      setLoading(false);
     }
-    setUser(JSON.parse(userData));
-    setLoading(false);
-  }, [router]);
+  }, [user]);
 
   if (loading || !user) return null;
 
   const qrData = encodeURIComponent(JSON.stringify({ 
-    id: btoa(user.email), 
-    name: user.name, 
+    id: btoa(user.primaryEmail || user.id), 
+    name: user.displayName || "GUEST_IDENTIFIED", 
     type: "VISITOR_PASS", 
     valid: true 
   }));
@@ -67,11 +63,11 @@ export default function ProfileContent() {
                 <div className="md:col-span-2 space-y-6">
                     <div>
                         <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-1">Holder Name</div>
-                        <div className="text-xl font-bold font-mono">{user.name}</div>
+                        <div className="text-xl font-bold font-mono">{user.displayName || "ANONYMOUS_USER"}</div>
                     </div>
                     <div>
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-1">Affiliation</div>
-                        <div className="text-lg font-mono">{user.institution}</div>
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-1">Identifier</div>
+                        <div className="text-lg font-mono">{user.primaryEmail}</div>
                     </div>
                     <div>
                         <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-1">Access Level</div>
@@ -91,7 +87,7 @@ export default function ProfileContent() {
              <div className="flex justify-between items-end font-mono text-[10px] text-neutral-500 uppercase tracking-widest">
                 <div>
                     <div>Generated: {new Date().toLocaleDateString()}</div>
-                    <div>ID: {btoa(user.email).substring(0, 12)}...</div>
+                    <div>ID: {user.id.substring(0, 12)}...</div>
                 </div>
                 <div className="text-right">
                     <div>Birla Institute of Technology</div>

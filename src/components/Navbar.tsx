@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import MacOSDock from "@/components/ui/mac-os-dock";
 
@@ -13,43 +12,43 @@ export function Navbar() {
       id: "home", 
       name: "Home", 
       link: "/", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Finder_Icon_macOS_Big_Sur.png" 
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumHome&backgroundColor=0a0a0a" 
     },
     { 
       id: "events", 
       name: "Events", 
       link: "/events", 
-      icon: "https://www.svgrepo.com/show/530609/compass.svg"
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumEvents&backgroundColor=0a0a0a"
     },
     { 
       id: "sponsors", 
       name: "Sponsors", 
       link: "/sponsors", 
-      icon: "https://www.svgrepo.com/show/330513/githubsponsors.svg"
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumSponsors&backgroundColor=0a0a0a"
     },
     { 
       id: "about", 
       name: "About", 
       link: "/about", 
-      icon: "https://www.svgrepo.com/show/530613/camera.svg" 
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumAbout&backgroundColor=0a0a0a" 
     },
     { 
       id: "leaderboard", 
       name: "Leaderboard", 
       link: "/leaderboard", 
-      icon: "https://www.svgrepo.com/show/530588/chart-up.svg"
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumLeaderboard&backgroundColor=0a0a0a"
     },
     { 
       id: "help", 
       name: "Help", 
       link: "/helpdesk", 
-      icon: "https://www.svgrepo.com/show/530614/map.svg"
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumHelp&backgroundColor=0a0a0a"
     },
     { 
       id: "login", 
       name: "Login", 
       link: "/login", 
-      icon: "https://www.svgrepo.com/show/530605/user-id.svg"
+      icon: "https://api.dicebear.com/9.x/shapes/svg?seed=QuantumLogin&backgroundColor=0a0a0a"
     },
   ];
 
