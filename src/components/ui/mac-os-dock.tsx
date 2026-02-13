@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Types for the component
 // Types for the component
@@ -25,6 +26,7 @@ const MacOSDock: React.FC<MacOSDockProps> = ({
 }) => {
   // ... (state and refs remain the same)
   const [mouseX, setMouseX] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [currentScales, setCurrentScales] = useState<number[]>(apps.map(() => 1));
   const [currentPositions, setCurrentPositions] = useState<number[]>([]);
   const dockRef = useRef<HTMLDivElement>(null);
@@ -131,7 +133,10 @@ const MacOSDock: React.FC<MacOSDockProps> = ({
     }
   }, [baseIconSize]);
 
-  const handleMouseLeave = useCallback(() => setMouseX(null), []);
+  const handleMouseLeave = useCallback(() => {
+    setMouseX(null);
+    setHoveredIndex(null);
+  }, []);
 
   const createBounceAnimation = (element: HTMLElement) => {
     const bounceHeight = Math.max(-8, -baseIconSize * 0.15);
@@ -199,7 +204,8 @@ const MacOSDock: React.FC<MacOSDockProps> = ({
               key={app.id}
               ref={(el) => { iconRefs.current[index] = el; }}
               className="absolute cursor-pointer flex flex-col items-center justify-end"
-              title={app.name}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => handleAppClick(app.id, index)}
               style={{
                 left: `${position - scaledSize / 2}px`,
@@ -210,6 +216,25 @@ const MacOSDock: React.FC<MacOSDockProps> = ({
                 zIndex: Math.round(scale * 10)
               }}
             >
+              <AnimatePresence>
+                {hoveredIndex === index && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: -10, x: '-50%' }}
+                    animate={{ opacity: 1, scale: 1, y: -20, x: '-50%' }}
+                    exit={{ opacity: 0, scale: 0.8, y: -10, x: '-50%' }}
+                    className="absolute left-1/2 top-0 -translate-y-full px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap z-50"
+                    style={{
+                      background: 'rgba(30, 30, 30, 0.85)',
+                      backdropFilter: 'blur(8px)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+                      color: 'white'
+                    }}
+                  >
+                    {app.name}
+                  </motion.div>
+                )}
+              </AnimatePresence>
               {typeof app.icon === 'string' ? (
                 <img
                   src={app.icon}

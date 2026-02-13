@@ -19,25 +19,25 @@ export function Navbar() {
       id: "events", 
       name: "Events", 
       link: "/events", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Calendar_Icon_macOS_Big_Sur.png"
+      icon: "https://www.svgrepo.com/show/530609/compass.svg"
     },
     { 
       id: "sponsors", 
       name: "Sponsors", 
       link: "/sponsors", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Contacts_Icon_macOS_Big_Sur.png"
+      icon: "https://www.svgrepo.com/show/330513/githubsponsors.svg"
     },
     { 
       id: "about", 
       name: "About", 
       link: "/about", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/5/59/Safari_Browser_Icon_macOS_Big_Sur.png" 
+      icon: "https://www.svgrepo.com/show/530613/camera.svg" 
     },
     { 
       id: "help", 
       name: "Help", 
       link: "/helpdesk", 
-      icon: "https://upload.wikimedia.org/wikipedia/commons/2/29/System_Preferences_Icon_macOS_Big_Sur.png"
+      icon: "https://www.svgrepo.com/show/530614/map.svg"
     },
   ];
 
