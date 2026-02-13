@@ -14,37 +14,37 @@ export function Navbar() {
       id: "home",
       name: "Home",
       link: "/",
-      icon: "/icons/home.svg",
+      icon: "/icons/home.png",
     },
     {
       id: "events",
       name: "Events",
       link: "/events",
-      icon: "/icons/events.svg",
+      icon: "/icons/events.png",
     },
     {
       id: "schedule",
       name: "Schedule",
       link: "/schedule",
-      icon: "/icons/schedule.svg",
+      icon: "/icons/schedule.png",
     },
     {
       id: "sponsors",
       name: "Sponsors",
       link: "/sponsors",
-      icon: "/icons/sponsors.svg",
+      icon: "/icons/sponsors.png",
     },
     {
       id: "leaderboard",
       name: "Leaderboard",
       link: "/leaderboard",
-      icon: "/icons/leaderboard.svg",
+      icon: "/icons/leaderboard.png",
     },
     {
       id: "help",
       name: "Help",
       link: "/helpdesk",
-      icon: "/icons/help.svg",
+      icon: "/icons/help.png",
     },
     ...(user
       ? [
@@ -52,7 +52,7 @@ export function Navbar() {
             id: "profile",
             name: "Profile",
             link: "/profile",
-            icon: "/icons/profile.svg",
+            icon: "/icons/profile.png",
           },
         ]
       : [
@@ -60,7 +60,7 @@ export function Navbar() {
             id: "login",
             name: "Login",
             link: "/login",
-            icon: "/icons/login.svg",
+            icon: "/icons/login.png",
           },
         ]),
   ];
