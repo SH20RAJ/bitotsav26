@@ -34,6 +34,12 @@ export function Navbar() {
       icon: "https://www.svgrepo.com/show/530613/camera.svg" 
     },
     { 
+      id: "leaderboard", 
+      name: "Leaderboard", 
+      link: "/leaderboard", 
+      icon: "https://www.svgrepo.com/show/530588/chart-up.svg"
+    },
+    { 
       id: "help", 
       name: "Help", 
       link: "/helpdesk", 
