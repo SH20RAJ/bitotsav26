@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { User, Mail, Building2, Ticket } from "lucide-react";
 
-export default function LoginPage() {
+export default function LoginContent() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",

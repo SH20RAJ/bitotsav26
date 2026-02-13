@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Printer, CheckCircle } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 
-export default function ProfilePage() {
+export default function ProfileContent() {
   const router = useRouter();
   const [user, setUser] = useState<{name: string, email: string, institution: string} | null>(null);
   const [loading, setLoading] = useState(true);
