@@ -2,10 +2,12 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import MacOSDock from "@/components/ui/mac-os-dock";
+import { useUser } from "@stackframe/stack";
 
 export function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
+  const user = useUser();
 
   const navItems = [
     { 
@@ -33,12 +35,6 @@ export function Navbar() {
       icon: "/icons/sponsors.svg"
     },
     { 
-      id: "about", 
-      name: "About", 
-      link: "/about", 
-      icon: "/icons/about.svg" 
-    },
-    { 
       id: "leaderboard", 
       name: "Leaderboard", 
       link: "/leaderboard", 
@@ -50,12 +46,21 @@ export function Navbar() {
       link: "/helpdesk", 
       icon: "/icons/help.svg"
     },
-    { 
-      id: "login", 
-      name: "Login", 
-      link: "/login", 
-      icon: "/icons/login.svg"
-    },
+    ...(user ? [
+      { 
+        id: "profile", 
+        name: "Profile", 
+        link: "/profile", 
+        icon: "/icons/login.svg" // Using login icon for profile for now, or could use help
+      }
+    ] : [
+      { 
+        id: "login", 
+        name: "Login", 
+        link: "/login", 
+        icon: "/icons/login.svg"
+      }
+    ]),
   ];
 
   const handleAppClick = (appId: string) => {
