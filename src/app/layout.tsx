@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import localFont from "next/font/local";
@@ -123,7 +123,9 @@ export default function RootLayout({
           <StackTheme theme={customTheme}>
           
 
-            <Navbar />
+            <Suspense fallback={null}>
+              <Navbar />
+            </Suspense>
             <main className="min-h-screen">
               {children}
             </main>
