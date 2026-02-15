@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -28,25 +27,29 @@ const features = [
   },
 ];
 
+import { PremiumCard } from "@/components/ui/premium-card";
+
 export function Features() {
   return (
-    <section className="py-32 relative overflow-hidden bg-[#050A1F]">
+    <section className="py-32 relative overflow-hidden bg-black">
       {/* Background Ambient Glow */}
-       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#800020]/10 blur-[120px] rounded-full pointer-events-none" />
+       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-violet-900/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-[#FFD700]">Chapters of the Fest</h2>
-          <div className="flex items-center justify-center gap-2 opacity-60">
-              <div className="h-px w-24 bg-linear-to-r from-transparent to-[#C5A059]" />
-              <div className="w-2 h-2 rotate-45 bg-[#C5A059]" />
-              <div className="h-px w-24 bg-linear-to-l from-transparent to-[#C5A059]" />
+          <h2 className="text-4xl md:text-6xl font-bold font-heading mb-6 text-transparent bg-clip-text bg-linear-to-b from-[#FFD700] via-[#FDB931] to-[#C08F09] drop-shadow-lg">
+            CHAPTERS OF THE FEST
+          </h2>
+          <div className="flex items-center justify-center gap-4 opacity-80">
+              <div className="h-[2px] w-16 md:w-32 bg-linear-to-r from-transparent via-[#C5A059] to-transparent" />
+              <div className="w-3 h-3 rotate-45 bg-[#FFD700] shadow-[0_0_10px_#FFD700]" />
+              <div className="h-[2px] w-16 md:w-32 bg-linear-to-l from-transparent via-[#C5A059] to-transparent" />
           </div>
         </motion.div>
 
@@ -58,35 +61,40 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative h-[400px] rounded-lg overflow-hidden border border-[#C5A059]/20 transition-all duration-500 hover:border-[#FFD700]/50 hover:shadow-[0_0_30px_rgba(255,215,0,0.1)]"
             >
-              {/* Background Image (Revealed on Hover) */}
-              <div className="absolute inset-0 bg-[#0A1025] transition-all duration-500 group-hover:scale-110">
-                  <Image 
-                      src={feature.image} 
-                      alt={feature.title} 
-                      fill
-                      className="object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0" 
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#050A1F] via-[#050A1F]/80 to-transparent" />
-              </div>
+              <PremiumCard className="group h-[450px]">
+                {/* Background Image (Revealed on Hover) */}
+                <div className="absolute inset-0 bg-[#050A1F] transition-all duration-700 group-hover:scale-105">
+                    <Image 
+                        src={feature.image} 
+                        alt={feature.title} 
+                        fill
+                        className="object-cover opacity-30 group-hover:opacity-60 transition-opacity duration-700 grayscale group-hover:grayscale-0" 
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent" />
+                </div>
 
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <div className={cn(
-                  "w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-black/40 border border-white/10 shadow-xl backdrop-blur-md group-hover:scale-110 transition-transform duration-500",
-                  feature.color
-                  )}>
-                    <Image src={feature.icon} alt={feature.title} width={40} height={40} className="object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold font-serif text-[#E0D8C0] mb-3 group-hover:text-[#FFD700] transition-colors translate-y-2 group-hover:translate-y-0 duration-300">
-                      {feature.title}
-                  </h3>
-                  
-                  <p className="text-[#C5A059]/70 leading-relaxed font-sans text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-                  {feature.description}
-                  </p>
-              </div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end items-center text-center">
+                    <div className="relative mb-6 transform group-hover:-translate-y-2 transition-transform duration-500">
+                      <div className="absolute inset-0 bg-[#FFD700]/30 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <Image 
+                        src={feature.icon} 
+                        alt={feature.title} 
+                        width={80} 
+                        height={80} 
+                        className="relative z-10 object-contain drop-shadow-[0_0_20px_rgba(255,215,0,0.6)]" 
+                      />
+                    </div>
+                    
+                    <h3 className="text-2xl md:text-3xl font-bold font-heading text-[#E0D8C0] mb-4 group-hover:text-[#FFD700] transition-colors duration-300">
+                        {feature.title}
+                    </h3>
+                    
+                    <p className="text-[#C5A059] leading-relaxed font-serif text-base max-w-xs opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                    {feature.description}
+                    </p>
+                </div>
+              </PremiumCard>
             </motion.div>
           ))}
         </div>

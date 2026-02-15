@@ -1,28 +1,38 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import { PremiumButton } from "@/components/ui/premium-button";
 
 export function CTA() {
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#800020]/5 pattern-grid-lg opacity-20" />
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-          <div className="flex justify-center mb-8">
-              <div className="relative w-24 h-24 md:w-32 md:h-32 animate-float">
-                  <div className="absolute inset-0 bg-violet-500/20 blur-3xl rounded-full" />
-                  <Image src="/icons/login.png" alt="Unlock" fill className="object-contain drop-shadow-[0_0_30px_rgba(255,215,0,0.4)]" />
+    <section className="py-32 relative overflow-hidden flex items-center justify-center">
+      {/* Cinematic Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-violet-900/20 via-black to-black" />
+      <div className="absolute inset-0 bg-[#FFD700]/5 mix-blend-overlay" />
+      
+      {/* Golden Frame */}
+      <div className="absolute inset-4 border border-[#C5A059]/20 rounded-3xl pointer-events-none" />
+      <div className="absolute inset-4 border border-[#C5A059]/10 rounded-3xl blur-[1px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+          <div className="flex justify-center mb-10">
+              <div className="relative w-32 h-32 md:w-40 md:h-40 animate-float">
+                  <div className="absolute inset-0 bg-[#FFD700]/20 blur-[50px] rounded-full" />
+                  <Image src="/icons/login.png" alt="Unlock" fill className="object-contain drop-shadow-[0_0_40px_rgba(255,215,0,0.6)]" />
               </div>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold font-heading mb-6 text-transparent bg-clip-text bg-linear-to-b from-[#FFD700] to-[#B8860B]">The Saga Awaits</h2>
-          <p className="text-lg md:text-xl text-neutral-300 mb-10 font-light tracking-wide max-w-2xl mx-auto">
-              Will you be part of the legend? Join us for the grandest celebration of the year.
+          
+          <h2 className="text-4xl md:text-7xl font-bold font-heading mb-8 text-transparent bg-clip-text bg-linear-to-b from-[#FFD700] via-[#FDB931] to-[#C08F09] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+            THE SAGA AWAITS
+          </h2>
+          
+          <p className="text-lg md:text-2xl text-[#E0D8C0] mb-12 font-serif italic tracking-wide max-w-2xl mx-auto opacity-90">
+              &quot;Will you be part of the legend? Join us for the grandest celebration of the year.&quot;
           </p>
-          <Link
-            href="/login"
-            className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-[#050A1F] transition-all duration-300 bg-linear-to-r from-[#C5A059] to-[#FFD700] rounded-sm hover:from-[#E5C079] hover:to-[#FFE033] shadow-[0_0_30px_rgba(255,215,0,0.3)] hover:shadow-[0_0_50px_rgba(255,215,0,0.5)] transform hover:-translate-y-1"
-          >
-            Get Digital Pass
+
+          <Link href="/login">
+            <PremiumButton className="text-lg md:text-xl px-12 py-6">
+              Get Digital Pass
+            </PremiumButton>
           </Link>
       </div>
     </section>
