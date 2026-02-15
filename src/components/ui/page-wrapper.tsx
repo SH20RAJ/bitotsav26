@@ -1,0 +1,39 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
+import { motion } from "framer-motion";
+
+interface PageWrapperProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export function PageWrapper({ children, className }: PageWrapperProps) {
+  return (
+    <main className={cn("relative min-h-screen w-full overflow-hidden bg-[#05020a] text-white pt-24", className)}>
+      {/* Premium Background Layer */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+          {/* Base Gradient */}
+          <div className="absolute inset-0 bg-linear-to-b from-[#05020a] via-[#1a0b2e] to-[#05020a]" />
+          
+          {/* Radial Glows */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(138,43,226,0.15),transparent_70%)] opacity-60" />
+          <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-[radial-gradient(circle_at_bottom_right,rgba(255,215,0,0.05),transparent_70%)]" />
+
+          {/* Grain Overlay */}
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
+      </div>
+
+      {/* Content Layer */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="relative z-10 container mx-auto px-4 md:px-8 pb-16"
+      >
+        {children}
+      </motion.div>
+    </main>
+  );
+}

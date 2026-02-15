@@ -1,6 +1,7 @@
 "use client";
 
 import KineticTeamHybrid from "@/components/ui/kinetic-team-hybrid";
+import { PageWrapper } from "@/components/ui/page-wrapper";
 
 const developers = [
   { 
@@ -91,13 +92,13 @@ const developers = [
 
 export default function DevelopersContent() {
   return (
-    <div className="min-h-screen bg-[#050A1F]">
+    <PageWrapper>
         <KineticTeamHybrid 
             title="Code Wizards" 
             subtitle="The Architects of Bitotsav '26"
             members={developers} 
         />
-    </div>
+    </PageWrapper>
   );
 }
 

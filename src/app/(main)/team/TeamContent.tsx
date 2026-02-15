@@ -3,6 +3,7 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { TeamMember } from "@/types";
+import { PageWrapper } from "@/components/ui/page-wrapper";
 
 // Static data based on fetched content (will be expanded later)
 const coreTeam: TeamMember[] = [
@@ -23,16 +24,16 @@ const developers: TeamMember[] = [
 
 export default function TeamContent() {
   return (
-    <>
+    <PageWrapper>
       <SectionHeader 
         title="System_Admins" 
         subtitle="Core processors and protocol maintainers."
       />
 
       <div className="max-w-7xl mx-auto mb-20 px-4">
-        <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
-            <div className="h-2 w-2 bg-white" />
-            <h3 className="text-sm font-mono text-white uppercase tracking-widest">
+        <div className="flex items-center gap-4 mb-8 border-b border-[#FFD700]/20 pb-4">
+            <div className="h-2 w-2 bg-[#FFD700]" />
+            <h3 className="text-sm font-bold font-heading text-[#FFD700] uppercase tracking-widest pl-2">
                 Core_Kernel_Level_0
             </h3>
         </div>
@@ -44,9 +45,9 @@ export default function TeamContent() {
       </div>
 
        <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
-            <div className="h-2 w-2 bg-neutral-500" />
-            <h3 className="text-sm font-mono text-neutral-400 uppercase tracking-widest">
+        <div className="flex items-center gap-4 mb-8 border-b border-[#8A2BE2]/20 pb-4">
+            <div className="h-2 w-2 bg-[#8A2BE2]" />
+            <h3 className="text-sm font-bold font-heading text-[#8A2BE2] uppercase tracking-widest pl-2">
                 Dev_Ops_Unit
             </h3>
         </div>
@@ -56,6 +57,6 @@ export default function TeamContent() {
           ))}
         </div>
       </div>
-    </>
+    </PageWrapper>
   );
 }

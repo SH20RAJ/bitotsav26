@@ -3,88 +3,121 @@
 import React from "react";
 import { Event } from "@/types";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Users, Ticket } from "lucide-react";
+import { Calendar, MapPin, Users } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { PremiumButton } from "@/components/ui/premium-button";
+import { PageWrapper } from "@/components/ui/page-wrapper";
+import { cn } from "@/lib/utils";
 
 interface EventDetailsProps {
   event: Event;
 }
 
 export default function EventDetails({ event }: EventDetailsProps) {
+  const isFlagship = event.category === "Flagship";
+
   return (
-    <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+    <PageWrapper>
       <SectionHeader title={event.name} subtitle={event.category} />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl mx-auto mt-8"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Main Content */}
           <div className="lg:col-span-7 space-y-12">
             
             <div className="space-y-8">
-              <div className="flex items-center space-x-2 text-violet-400">
-                <span className="h-px w-8 bg-violet-400/50"></span>
-                <span className="text-xs font-medium tracking-[0.2em] uppercase">About the event</span>
+              <div className={cn(
+                  "flex items-center space-x-2",
+                  isFlagship ? "text-[#FFD700]" : "text-[#8A2BE2]"
+              )}>
+                <span className="h-px w-12 bg-current opacity-50"></span>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase font-heading">Mission Brief</span>
               </div>
-              <p className="text-xl md:text-2xl text-neutral-300 font-light leading-relaxed">
-                Join us for {event.name}, a flagship {event.category.toLowerCase()} event at Bitotsav &apos;26. 
-                Witness the talent, creativity, and energy as participants compete for glory in this spectacular showcase.
+              <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed font-serif">
+                Join us for <strong className={isFlagship ? "text-[#FFD700]" : "text-[#8A2BE2]"}>{event.name}</strong>, a premier operation within the {event.category.toLowerCase()} sector at Bitotsav &apos;26. 
+                Witness the convergence of skill and strategy in this high-stakes engagement.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 border-t border-white/5">
-              <div className="space-y-2 group">
-                <div className="flex items-center space-x-3 text-neutral-500 mb-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 border-t border-white/10">
+              <div className="space-y-2 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center space-x-3 text-white/50 mb-1">
                   <Users className="w-4 h-4" />
-                  <span className="text-xs uppercase tracking-widest">Organizer</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Command</span>
                 </div>
-                <p className="text-lg text-white font-medium group-hover:text-violet-300 transition-colors">{event.organizer}</p>
+                <p className={cn(
+                    "text-lg font-medium transition-colors",
+                    isFlagship ? "text-white group-hover:text-[#FFD700]" : "text-white group-hover:text-[#8A2BE2]"
+                )}>{event.organizer}</p>
               </div>
               
-              <div className="space-y-2 group">
-                <div className="flex items-center space-x-3 text-neutral-500 mb-1">
+              <div className="space-y-2 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center space-x-3 text-white/50 mb-1">
                   <MapPin className="w-4 h-4" />
-                  <span className="text-xs uppercase tracking-widest">Venue</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Coordinates</span>
                 </div>
-                <p className="text-lg text-white font-medium group-hover:text-violet-300 transition-colors">{event.venue}</p>
+                <p className={cn(
+                    "text-lg font-medium transition-colors",
+                    isFlagship ? "text-white group-hover:text-[#FFD700]" : "text-white group-hover:text-[#8A2BE2]"
+                )}>{event.venue}</p>
               </div>
 
-              <div className="space-y-2 group">
-                <div className="flex items-center space-x-3 text-neutral-500 mb-1">
+              <div className="space-y-2 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center space-x-3 text-white/50 mb-1">
                   <Calendar className="w-4 h-4" />
-                  <span className="text-xs uppercase tracking-widest">Date & Time</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Timeline</span>
                 </div>
-                <p className="text-lg text-white font-medium group-hover:text-violet-300 transition-colors">To Be Announced</p>
+                <p className={cn(
+                    "text-lg font-medium transition-colors",
+                    isFlagship ? "text-white group-hover:text-[#FFD700]" : "text-white group-hover:text-[#8A2BE2]"
+                )}>To Be Announced</p>
               </div>
             </div>
 
             <div className="pt-8">
                <Link href="/tickets">
-                  <Button className="w-full sm:w-auto bg-white text-black hover:bg-neutral-200 px-10 py-7 text-sm font-semibold tracking-widest uppercase rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                    <Ticket className="mr-3 h-4 w-4" />
+                  <PremiumButton 
+                    variant={isFlagship ? "gold" : "violet"}
+                    className="w-full sm:w-auto"
+                  >
                     Secure Your Spot
-                  </Button>
+                  </PremiumButton>
                </Link>
             </div>
           </div>
 
           {/* Visual Side */}
           <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-900 border border-white/5 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-blue-500/10 opacity-50" />
+            <div className={cn(
+                "relative aspect-4/5 rounded-2xl overflow-hidden bg-[#05020a] border group",
+                isFlagship ? "border-[#FFD700]/20" : "border-[#8A2BE2]/20"
+            )}>
+                <div className={cn(
+                    "absolute inset-0 bg-linear-to-br opacity-50",
+                    isFlagship ? "from-[#FFD700]/10 via-transparent to-[#C5A059]/10" : "from-[#8A2BE2]/10 via-transparent to-[#4B0082]/10"
+                )} />
                 
                 {/* Abstract decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/20 rounded-full blur-[100px] pointer-events-none -mr-32 -mt-32" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none -ml-32 -mb-32" />
+                <div className={cn(
+                    "absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none -mr-32 -mt-32 opacity-30",
+                    isFlagship ? "bg-[#FFD700]" : "bg-[#8A2BE2]"
+                )} />
+                <div className={cn(
+                    "absolute bottom-0 left-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none -ml-32 -mb-32 opacity-30",
+                    isFlagship ? "bg-[#C5A059]" : "bg-[#4B0082]"
+                )} />
 
                 <div className="absolute inset-0 flex items-center justify-center p-8">
-                  <h3 className="text-4xl md:text-5xl font-bold text-white/5 group-hover:text-white/10 transition-colors duration-700 uppercase tracking-widest text-center leading-tight">
+                  <h3 className={cn(
+                      "text-4xl md:text-5xl font-bold transition-colors duration-700 uppercase tracking-widest text-center leading-tight font-heading",
+                      isFlagship ? "text-[#FFD700]/20 group-hover:text-[#FFD700]/40" : "text-[#8A2BE2]/20 group-hover:text-[#8A2BE2]/40"
+                  )}>
                       {event.name}
                   </h3>
                 </div>
@@ -92,6 +125,6 @@ export default function EventDetails({ event }: EventDetailsProps) {
           </div>
         </div>
       </motion.div>
-    </div>
+    </PageWrapper>
   );
 }
