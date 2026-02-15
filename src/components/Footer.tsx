@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Twitter, Instagram, Linkedin, Heart } from "lucide-react";
 
 export function Footer() {
@@ -7,10 +8,15 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-2xl font-bold font-heading text-white mb-4">Bitotsav 2026</h2>
-            <p className="text-gray-400 max-w-sm">
+            <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-12 h-12">
+                   <Image src="/icons/home.png" alt="Bitotsav" fill className="object-contain" />
+                </div>
+                <h2 className="text-2xl font-bold font-heading text-transparent bg-clip-text bg-linear-to-r from-[#FFD700] to-[#E5C079]">Bitotsav 2026</h2>
+            </div>
+            <p className="text-neutral-400 max-w-sm leading-relaxed text-sm">
               Experience the fusion of culture, technology, and art. Join us for 
-              BIT Mesra's largest annual festival where innovation meets tradition.
+              BIT Mesra&apos;s largest annual festival where innovation meets tradition.
             </p>
           </div>
           

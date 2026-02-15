@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Music, Zap, Mic } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -9,23 +8,23 @@ const features = [
   {
     title: "Cultural Extravaganza",
     description: "Experience the vibrancy of dance, music, and drama with flagship events like Dance Saga and Battle of Bands.",
-    icon: Music,
-    color: "from-[#800020] to-[#500014]", // Maroon gradient
-    image: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop", // Live music/Club
+    icon: "/icons/events.png", // Star icon
+    color: "from-[#2a0a3d] to-[#000000]", // Deep violet
+    image: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop", 
   },
   {
     title: "Technical Prowess",
     description: "Showcase your coding and engineering skills in Hackathons, Robowars, and Technical Quizzes.",
-    icon: Zap,
-    color: "from-[#B8860B] to-[#DAA520]", // Gold gradient
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop", // Tech/Circuitry
+    icon: "/icons/leaderboard.png", // Trophy icon
+    color: "from-[#3d2a0a] to-[#000000]", // Deep gold
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop", 
   },
   {
     title: "Star Nights",
     description: "Witness electrifying performances by celebrity artists and bands that will leave you spellbound.",
-    icon: Mic,
-    color: "from-[#050A1F] to-[#0A1F45]", // Deep Blue gradient
-    image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop", // Concert crowd
+    icon: "/icons/events.png", // Star icon again (fits best)
+    color: "from-[#0a0f29] to-[#000000]", // Deep blue
+    image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop", 
   },
 ];
 
@@ -45,9 +44,9 @@ export function Features() {
         >
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-[#FFD700]">Chapters of the Fest</h2>
           <div className="flex items-center justify-center gap-2 opacity-60">
-              <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#C5A059]" />
+              <div className="h-px w-24 bg-linear-to-r from-transparent to-[#C5A059]" />
               <div className="w-2 h-2 rotate-45 bg-[#C5A059]" />
-              <div className="h-px w-24 bg-gradient-to-l from-transparent to-[#C5A059]" />
+              <div className="h-px w-24 bg-linear-to-l from-transparent to-[#C5A059]" />
           </div>
         </motion.div>
 
@@ -74,10 +73,10 @@ export function Features() {
 
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className={cn(
-                  "w-12 h-12 rounded-full flex items-center justify-center mb-4 bg-gradient-to-br border border-[#FFFFFF]/10 shadow-lg backdrop-blur-md",
+                  "w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-black/40 border border-white/10 shadow-xl backdrop-blur-md group-hover:scale-110 transition-transform duration-500",
                   feature.color
                   )}>
-                  <feature.icon className="w-5 h-5 text-[#E0D8C0]" />
+                    <Image src={feature.icon} alt={feature.title} width={40} height={40} className="object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]" />
                   </div>
                   
                   <h3 className="text-2xl font-bold font-serif text-[#E0D8C0] mb-3 group-hover:text-[#FFD700] transition-colors translate-y-2 group-hover:translate-y-0 duration-300">
