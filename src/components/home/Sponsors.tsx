@@ -63,8 +63,7 @@ export function Sponsors() {
                                 <img 
                                     src={sponsor.logo} 
                                     alt={sponsor.name} 
-                                    fill
-                                    className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
+                                     className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
                                 />
                             </div>
                             <span className="text-[10px] font-bold tracking-widest text-[#C5A059] uppercase opacity-60 group-hover:opacity-100 transition-opacity">
