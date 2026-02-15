@@ -9,7 +9,7 @@ const features = [
     description: "Experience the vibrancy of dance, music, and drama with flagship events like Dance Saga and Battle of Bands.",
     icon: "/icons/events.png", // Star icon
     color: "from-[#2a0a3d] to-[#000000]", // Deep violet
-    image: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop", 
+    image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/66822cd4-62e8-423e-8b97-8cecc2c46dac/anim=false,width=450,optimized=true/120489483.jpeg", 
   },
   {
     title: "Technical Prowess",
