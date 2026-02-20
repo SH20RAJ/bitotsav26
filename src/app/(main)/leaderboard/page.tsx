@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Live Leaderboard | Bitotsav 2026",
     description: "Track the real-time rankings and competition standings of BIT Mesra's premier saga.",
-    url: 'https://bitotsav.strivio.world/leaderboard',
+    url: 'https://bitotsav.bitmesra.ac.in/leaderboard',
   },
 };
 

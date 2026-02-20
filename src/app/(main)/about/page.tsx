@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Story | Bitotsav 2026",
     description: "Explore the legacy of Bitotsav - BIT Mesra's premier cultural saga.",
-    url: 'https://bitotsav.strivio.world/about',
+    url: 'https://bitotsav.bitmesra.ac.in/about',
   },
 };
 

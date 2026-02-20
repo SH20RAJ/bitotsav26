@@ -35,7 +35,7 @@ const lato = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bitotsav.strivio.world'),
+  metadataBase: new URL('https://bitotsav.bitmesra.ac.in'),
   title: {
     default: "Bitotsav 2026 | BIT Mesra",
     template: "%s | Bitotsav 2026"
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bitotsav 2026 | BIT Mesra",
     description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
-    url: 'https://bitotsav.strivio.world',
+    url: 'https://bitotsav.bitmesra.ac.in',
     siteName: 'Bitotsav 2026',
     locale: 'en_IN',
     type: 'website',

@@ -24,7 +24,7 @@ export default function Home() {
         "addressCountry": "IN"
       }
     },
-    "image": "https://bitotsav.strivio.world/og-main.png"
+    "image": "https://bitotsav.bitmesra.ac.in/og-main.png"
   };
 
   return (

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "All Events | Bitotsav 2026",
     description: "Explore the schedule of flagship events, cultural competitions, and tech challenges at Bitotsav 2026.",
-    url: 'https://bitotsav.strivio.world/events',
+    url: 'https://bitotsav.bitmesra.ac.in/events',
   },
 };
 

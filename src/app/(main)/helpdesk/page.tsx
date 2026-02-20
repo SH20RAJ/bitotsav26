@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Support Center | Bitotsav 2026",
     description: "Get assistance, join our community, or contact the Bitotsav 2026 team for support.",
-    url: 'https://bitotsav.strivio.world/helpdesk',
+    url: 'https://bitotsav.bitmesra.ac.in/helpdesk',
   },
 };
 

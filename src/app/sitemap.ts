@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bitotsav.strivio.world';
+  const baseUrl = 'https://bitotsav.bitmesra.ac.in';
   
   const routes = [
     '',

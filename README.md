@@ -1,5 +1,3 @@
 https://bitotsav26.shraj.workers.dev
 
-
-https://bitotsav.strivio.world
-
+https://bitotsav.bitmesra.ac.in
