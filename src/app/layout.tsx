@@ -37,11 +37,11 @@ const lato = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://bitotsav.strivio.world'),
   title: {
-    default: "Bitotsav 2026 | Gaatha",
+    default: "Bitotsav 2026 | BIT Mesra",
     template: "%s | Bitotsav 2026"
   },
   description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
-  keywords: ["Bitotsav", "2026", "Gaatha", "BIT Mesra", "Cultural Fest", "Technical Fest", "Sports Fest", "The Endless Saga"],
+  keywords: ["Bitotsav", "2026", "BIT Mesra", "Cultural Fest", "Technical Fest", "Sports Fest"],
   authors: [{ name: "Bitotsav Team" }],
   creator: "Bitotsav Team",
   publisher: "BIT Mesra",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Bitotsav 2026 | Gaatha",
+    title: "Bitotsav 2026 | BIT Mesra",
     description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
     url: 'https://bitotsav.strivio.world',
     siteName: 'Bitotsav 2026',
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
         url: '/og-main.png',
         width: 1200,
         height: 630,
-        alt: 'Bitotsav 2026 | Gaatha',
+        alt: 'Bitotsav 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Bitotsav 2026 | Gaatha",
+    title: "Bitotsav 2026 | BIT Mesra",
     description: "The Endless Saga - BIT Mesra's Premier Cultural, Sports & Technical Festival",
     creator: '@bitotsav',
     images: ['/og-main.png'],

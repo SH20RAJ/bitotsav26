@@ -21,7 +21,7 @@ export function Footer() {
                         </div>
                         <div>
                              <h2 className="text-3xl font-bold font-heading text-transparent bg-clip-text bg-linear-to-r from-[#FFD700] via-[#FDB931] to-[#C08F09]">BITOTSAV 2026</h2>
-                             <p className="text-[#C5A059] text-sm tracking-widest uppercase opacity-80">The Endless Saga</p>
+                             <p className="text-[#C5A059] text-sm tracking-widest uppercase opacity-80">BIT Mesra&apos;s Premier Festival</p>
                         </div>
                     </div>
                     <p className="text-neutral-400 max-w-sm leading-relaxed text-base font-serif italic border-l-2 border-[#C5A059]/30 pl-4">
@@ -64,6 +64,10 @@ export function Footer() {
                     <span>Forged with</span>
                     <Heart className="w-4 h-4 mx-2 text-red-500 fill-red-500 animate-pulse" />
                     <span>by Team Bitotsav</span>
+                </div>
+                <div className="flex items-center mt-4 md:mt-0 text-neutral-500 text-sm">
+                    <span>Developed by </span>
+                    <a href="https://sh20raj.github.io" target="_blank" rel="noopener noreferrer" className="text-[#FFD700] hover:text-[#FDB931] transition-colors ml-1 font-medium">Shaswat Raj</a>
                 </div>
                 </div>
             </div>

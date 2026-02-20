@@ -3,7 +3,7 @@ import SponsorsContent from "./SponsorsContent";
 
 export const metadata: Metadata = {
   title: "Our Partners",
-  description: "Recognizing the corporate partners and sponsors who empower Bitotsav 2026: Gaatha.",
+  description: "Recognizing the corporate partners and sponsors who empower Bitotsav 2026.",
   alternates: {
     canonical: '/sponsors',
   },

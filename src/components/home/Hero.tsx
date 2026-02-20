@@ -17,10 +17,10 @@ export function Hero() {
         {/* Cinematic Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
             <EnergyBeam className="opacity-50" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
+            <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black/80" />
         </div>
 
-        <div className="relative z-10 w-full mx-auto w-full text-center flex flex-col items-center">
+        <div className="relative z-10 w-full mx-auto text-center flex flex-col items-center">
           
           {/* Bouncy Reveal Title - REPLACED with ParticleTextEffect */}
           <div className="relative h-[300px] md:h-[400px] flex items-center justify-center mb-6 overflow-hidden w-full">
@@ -43,7 +43,7 @@ export function Hero() {
             className="mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-light tracking-[0.3em] text-neutral-300 uppercase">
-                GATHA - THE ENDLESS SAGA
+                BIT MESRA - THE 35TH EDITION
             </h2>
           </motion.div>
 
@@ -52,13 +52,13 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 1.5 }}
           >
-            <Link href="/tickets">
+            <Link href="/login">
               <MagnetizeButton
                 className="bg-white text-black hover:bg-neutral-200 border-white/20 min-w-[200px] font-bold tracking-widest"
                 particleCount={15}
               >
                 <span className="flex items-center gap-3">
-                  ENTER THE LEGEND
+                  REGISTER NOW
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </MagnetizeButton>

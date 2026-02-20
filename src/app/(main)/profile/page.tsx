@@ -3,7 +3,7 @@ import ProfileContent from "./ProfileContent";
 
 export const metadata: Metadata = {
   title: "User Profile",
-  description: "Access your digital pass and manage your Bitotsav 2026: Gaatha identity.",
+  description: "Access your digital pass and manage your Bitotsav 2026 identity.",
   alternates: {
     canonical: '/profile',
   },

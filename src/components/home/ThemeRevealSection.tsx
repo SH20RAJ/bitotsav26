@@ -19,21 +19,24 @@ export function ThemeRevealSection() {
                 transition={{ duration: 0.8 }}
             >
                 <h2 className="text-4xl md:text-7xl font-bold font-heading text-white mb-6 tracking-tighter">
-                    THE ENDLESS SAGA
+                    BITOTSAV 2026
                 </h2>
-                <p className="text-[#FFD700] font-serif italic text-xl md:text-2xl mb-12 opacity-80">
+                <p className="text-[#FFD700] font-serif italic text-xl md:text-2xl mb-4 opacity-80">
                     Feb 13 - 16, 2026 &bull; BIT Mesra
+                </p>
+                <p className="text-neutral-500 text-sm mb-12">
+                    Register with your BIT Mesra webmail (<span className="text-[#FFD700]">@bitmesra.ac.in</span>)
                 </p>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <Link href="/theme-reveal">
-                        <PremiumButton variant="violet">
-                            Explore The Theme
+                    <Link href="/login">
+                        <PremiumButton variant="gold">
+                            Register Now
                         </PremiumButton>
                     </Link>
-                    <Link href="/tickets">
-                        <PremiumButton variant="gold">
-                             Get Tickets
+                    <Link href="/theme-reveal">
+                        <PremiumButton variant="violet">
+                            View Details
                         </PremiumButton>
                     </Link>
                 </div>

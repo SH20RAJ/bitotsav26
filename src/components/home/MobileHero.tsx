@@ -45,13 +45,12 @@ export function MobileHero() {
            className="space-y-3"
         >
            <h2 className="text-lg font-light tracking-[0.3em] text-white/90 uppercase">
-              GAATHA
+              BIT MESRA
            </h2>
            <div className="h-px w-16 mx-auto bg-linear-to-r from-transparent via-[#FFD700] to-transparent opacity-50" />
            <p className="text-xs font-serif italic text-[#C5A059] tracking-widest opacity-80">
-              The Endless Saga
-           </p>
-        </motion.div>
+              The 35th Edition
+           </p>        </motion.div>
 
         {/* Action Button */}
         <motion.div
@@ -60,9 +59,9 @@ export function MobileHero() {
            transition={{ duration: 0.8, delay: 0.6 }}
            className="mt-4"
         >
-          <Link href="/tickets">
+          <Link href="/login">
             <PremiumButton variant="gold" className="min-w-[180px] py-3 text-sm">
-                ENTER LEGEND
+                REGISTER NOW
                 <ArrowRight className="w-4 h-4 ml-2" />
             </PremiumButton>
           </Link>

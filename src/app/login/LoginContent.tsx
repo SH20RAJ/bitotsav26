@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Ticket } from "lucide-react";
+import { Ticket, AlertTriangle } from "lucide-react";
 import { SignIn } from "@stackframe/stack";
 
 export default function LoginContent() {
@@ -15,19 +15,27 @@ export default function LoginContent() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-md bg-neutral-900/50 border border-white/10 p-8 backdrop-blur-xl relative"
+        className="w-full max-w-md bg-neutral-900/50 border border-white/10 p-8 backdrop-blur-xl relative rounded-2xl"
       >
-        <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white" />
-        <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white" />
-        <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white" />
-        <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white" />
 
         <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-                <Ticket className="w-12 h-12 text-white" />
+                <Ticket className="w-12 h-12 text-[#FFD700]" />
             </div>
-            <h1 className="text-2xl font-bold font-mono text-white mb-2 uppercase tracking-tight">Access Control</h1>
-            <p className="text-neutral-500 text-xs font-mono uppercase tracking-widest">Identify Yourself to Secure Pass</p>
+            <h1 className="text-2xl font-bold font-heading text-white mb-2 uppercase tracking-tight">Register</h1>
+            <p className="text-neutral-400 text-sm">Sign in with your BIT Mesra webmail to get your pass</p>
+        </div>
+
+        {/* Webmail Notice */}
+        <div className="mb-6 p-4 bg-[#FFD700]/5 border border-[#FFD700]/20 rounded-xl flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-[#FFD700] shrink-0 mt-0.5" />
+            <div className="text-sm">
+                <p className="text-[#FFD700] font-bold mb-1">BIT Mesra Students Only</p>
+                <p className="text-neutral-400">
+                    Only emails ending with <span className="text-white font-mono text-xs">@bitmesra.ac.in</span> are allowed. 
+                    If you don&apos;t have a webmail, contact the ERP office to get one.
+                </p>
+            </div>
         </div>
 
         <div className="stack-auth-container">
@@ -37,28 +45,25 @@ export default function LoginContent() {
 
       <style jsx global>{`
         .stack-auth-container {
-          --stack-primary: #ffffff;
+          --stack-primary: #FFD700;
           --stack-background: transparent;
           --stack-surface: rgba(255, 255, 255, 0.05);
           --stack-border: rgba(255, 255, 255, 0.1);
           --stack-text: #ffffff;
           --stack-text-muted: rgba(255, 255, 255, 0.5);
-          --stack-radius: 0px;
-        }
-        .stack-auth-container * {
-          font-family: var(--font-mono), monospace !important;
+          --stack-radius: 12px;
         }
         .stack-auth-container button {
           text-transform: uppercase;
-          letter-spacing: 0.2em;
-          font-size: 10px !important;
-          border-radius: 0px !important;
+          letter-spacing: 0.1em;
+          font-size: 12px !important;
+          border-radius: 12px !important;
         }
         .stack-auth-container input {
           background-color: rgba(0, 0, 0, 0.3) !important;
           border: 1px solid rgba(255, 255, 255, 0.1) !important;
-          border-radius: 0px !important;
-          font-size: 12px !important;
+          border-radius: 12px !important;
+          font-size: 14px !important;
         }
       `}</style>
     </div>
