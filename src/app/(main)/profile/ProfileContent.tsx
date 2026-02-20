@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { Printer, CheckCircle, Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { useUser } from "@stackframe/stack";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { cn } from "@/lib/utils";
+
 
 export default function ProfileContent() {
   const user = useUser({ or: "redirect" });
@@ -32,7 +32,7 @@ export default function ProfileContent() {
     <PageWrapper>
       <div className="print:hidden">
         <SectionHeader 
-            title="Digital_Identity" 
+            title="Profile" 
             subtitle="Your unique access token for Bitotsav 2026."
             align="center"
         />
@@ -106,7 +106,7 @@ export default function ProfileContent() {
                 className="flex items-center gap-2 px-8 py-3 bg-[#FFD700] text-black font-bold font-heading text-xs uppercase tracking-widest hover:bg-[#FDB931] hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] transition-all rounded-full"
             >
                 <Printer className="w-4 h-4" />
-                Print_Pass
+                Print Pass
             </button>
         </div>
       </div>

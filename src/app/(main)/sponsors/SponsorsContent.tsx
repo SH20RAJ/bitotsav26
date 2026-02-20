@@ -43,14 +43,14 @@ export default function SponsorsContent() {
     <PageWrapper>
       <div className="space-y-32">
         <SectionHeader 
-          title="Corporate_Alliances" 
+          title="Our Sponsors" 
           subtitle="Strategic partners powering the interface."
           align="center"
         />
 
         {/* Title Sponsor */}
         <div className="max-w-7xl mx-auto text-center px-4">
-          <h3 className="text-xs font-bold font-heading text-[#FFD700] mb-10 uppercase tracking-[0.3em] opacity-80">[ 01. TITLE_SPONSOR ]</h3>
+          <h3 className="text-xs font-bold font-heading text-[#FFD700] mb-10 uppercase tracking-[0.3em] opacity-80">Title Sponsor</h3>
           <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -70,7 +70,7 @@ export default function SponsorsContent() {
                     className="w-12 h-12 grayscale opacity-30 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500 relative z-10"
                   />
                   <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-[#FFD700]/60 border-l border-b border-[#FFD700]/20 rounded-bl-xl bg-[#FFD700]/5">
-                      ID_TOKEN: #000001
+                      Featured Partner
                   </div>
                   <div className="text-4xl md:text-6xl font-bold font-heading text-white tracking-widest group-hover:scale-[1.02] transition-transform duration-500 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]">
                       Jharkhand Tourism
@@ -86,7 +86,7 @@ export default function SponsorsContent() {
 
         {/* Strategic Partners */}
         <div className="max-w-7xl mx-auto px-4">
-          <h3 className="text-xs font-bold font-heading text-[#8A2BE2] mb-12 text-center uppercase tracking-[0.3em] opacity-80">[ 02. STRATEGIC_NODES ]</h3>
+          <h3 className="text-xs font-bold font-heading text-[#8A2BE2] mb-12 text-center uppercase tracking-[0.3em] opacity-80">Strategic Partners</h3>
           <motion.div 
             variants={containerVariants}
             initial="hidden"
@@ -113,7 +113,7 @@ export default function SponsorsContent() {
 
         {/* Past Partners */}
         <div className="max-w-7xl mx-auto px-4 border-t border-white/5 pt-32">
-          <h3 className="text-xs font-bold font-heading text-neutral-500 mb-16 text-center uppercase tracking-[0.3em] opacity-80">[ 03. LEGACY_ARCHIVE ]</h3>
+          <h3 className="text-xs font-bold font-heading text-neutral-500 mb-16 text-center uppercase tracking-[0.3em] opacity-80">Past Sponsors</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
             {pastSponsors.map((name) => (
               <div 
@@ -142,7 +142,7 @@ export default function SponsorsContent() {
                   Configure your brand integration with the premier cultural interface.
               </p>
               <button className="relative z-10 px-10 py-4 border-2 border-black font-bold font-heading text-xs uppercase tracking-widest hover:bg-black hover:text-[#FFD700] transition-all duration-300 group-hover:border-[#05020a]">
-                  EXECUTE_CONTACT_PROTOCOL
+                  Contact Us
               </button>
           </div>
         </motion.div>

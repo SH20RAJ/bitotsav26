@@ -37,7 +37,7 @@ export default function EventDetails({ event }: EventDetailsProps) {
                   isFlagship ? "text-[#FFD700]" : "text-[#8A2BE2]"
               )}>
                 <span className="h-px w-12 bg-current opacity-50"></span>
-                <span className="text-xs font-bold tracking-[0.2em] uppercase font-heading">Mission Brief</span>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase font-heading">About</span>
               </div>
               <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed font-serif">
                 Join us for <strong className={isFlagship ? "text-[#FFD700]" : "text-[#8A2BE2]"}>{event.name}</strong>, a premier operation within the {event.category.toLowerCase()} sector at Bitotsav &apos;26. 
@@ -49,7 +49,7 @@ export default function EventDetails({ event }: EventDetailsProps) {
               <div className="space-y-2 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="flex items-center space-x-3 text-white/50 mb-1">
                   <Users className="w-4 h-4" />
-                  <span className="text-[10px] uppercase tracking-widest font-bold">Command</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Organizer</span>
                 </div>
                 <p className={cn(
                     "text-lg font-medium transition-colors",
@@ -60,7 +60,7 @@ export default function EventDetails({ event }: EventDetailsProps) {
               <div className="space-y-2 group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="flex items-center space-x-3 text-white/50 mb-1">
                   <MapPin className="w-4 h-4" />
-                  <span className="text-[10px] uppercase tracking-widest font-bold">Coordinates</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Venue</span>
                 </div>
                 <p className={cn(
                     "text-lg font-medium transition-colors",

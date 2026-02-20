@@ -17,7 +17,7 @@ export default function AboutContent() {
   return (
     <PageWrapper>
       <SectionHeader 
-        title="System_Legacy" 
+        title="About Bitotsav" 
         subtitle="Operational history and user engagement metrics."
       />
 
@@ -71,7 +71,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
         >
-            <span className="text-[#8A2BE2] font-bold font-mono text-xs uppercase tracking-widest">MODULES_LOADED:</span> <strong className="text-white">Heritage_Nite</strong>, <strong className="text-white">Band_Nite</strong>, <strong className="text-white">EDM_Nite</strong>, <strong className="text-white">Pro_Nite</strong>.
+            <span className="text-[#8A2BE2] font-bold font-mono text-xs uppercase tracking-widest">Highlights:</span> <strong className="text-white">Heritage Nite</strong>, <strong className="text-white">Band Nite</strong>, <strong className="text-white">EDM Nite</strong>, <strong className="text-white">Pro Nite</strong>.
             <br/><br/>
             Bitotsav is not merely a festival; it is a synchronized execution of talent, creativity, and legacy code passed down through generations of BITians.
         </motion.p>

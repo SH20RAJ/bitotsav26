@@ -97,7 +97,7 @@ export default function LeaderboardContent() {
     <PageWrapper>
       <div className="space-y-24">
         <SectionHeader
-          title="Live_Rankings"
+          title="Leaderboard"
           subtitle="Real-time competitive metrics and team standings."
           align="center"
         />
@@ -266,7 +266,7 @@ export default function LeaderboardContent() {
 
           <div className="mt-12 text-center pb-20">
             <button className="px-8 py-3 border border-white/10 rounded-full hover:bg-[#FFD700] hover:text-black hover:border-transparent transition-all font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold">
-              Load_More_Data
+              Load More
             </button>
           </div>
         </div>

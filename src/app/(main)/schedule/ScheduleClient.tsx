@@ -45,7 +45,7 @@ export default function ScheduleClient() {
   return (
     <PageWrapper>
       <SectionHeader 
-        title="Schedule_Module" 
+        title="Schedule" 
         subtitle="Operational timeline for the festival sequence."
       />
 

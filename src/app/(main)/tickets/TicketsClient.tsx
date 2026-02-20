@@ -9,20 +9,20 @@ import { PremiumButton } from "@/components/ui/premium-button";
 
 const ticketTiers = [
   {
-    name: "Day_Pass_v1",
+    name: "Day Pass",
     price: "₹499",
     description: "Single cycle access.",
     icon: Ticket,
-    features: ["Access: 1 Day", "Pro_Nite: Standing", "Food_Court: Authorized"],
+    features: ["Access: 1 Day", "Pro Nite: Standing", "Food Court: Included"],
     variant: "violet" as const,
     recommended: false,
   },
   {
-    name: "Fest_Pass_Pro",
+    name: "Fest Pass Pro",
     price: "₹1499",
     description: "Full system access.",
     icon: Star,
-    features: ["Access: All Days", "Pro_Nite: All", "Priority_Queue: High", "Merch_Kit: Standard"],
+    features: ["Access: All Days", "Pro Nite: All", "Priority Queue", "Merch Kit: Standard"],
     variant: "gold" as const,
     recommended: true,
   },
@@ -31,7 +31,7 @@ const ticketTiers = [
     price: "₹2999",
     description: "Admin level privileges.",
     icon: Crown,
-    features: ["Access: Front Row", "Meet_n_Greet: Artists", "Lounge: Exclusive", "Merch: Premium", "Backstage_Tour: Enabled"],
+    features: ["Access: Front Row", "Meet & Greet: Artists", "Lounge: Exclusive", "Merch: Premium", "Backstage Tour"],
     variant: "violet" as const,
     recommended: false,
   },
@@ -41,7 +41,7 @@ export default function TicketsClient() {
   return (
     <PageWrapper>
       <SectionHeader 
-        title="Access_Control" 
+        title="Tickets" 
         subtitle="Select your authorization level."
       />
 
@@ -106,7 +106,7 @@ export default function TicketsClient() {
                 variant={tier.variant} 
                 className="w-full"
             >
-                Execute_Order
+                Buy Now
             </PremiumButton>
           </motion.div>
         ))}
@@ -122,7 +122,7 @@ export default function TicketsClient() {
             <div className="w-12 h-12 mx-auto mb-6 rounded-full bg-[#C5A059]/10 flex items-center justify-center border border-[#C5A059]/30">
                 <Zap className="w-6 h-6 text-[#C5A059]" />
             </div>
-            <h3 className="text-xl font-bold font-heading text-white mb-2 uppercase tracking-widest">Student_Verification</h3>
+            <h3 className="text-xl font-bold font-heading text-white mb-2 uppercase tracking-widest">Student Verification</h3>
             <p className="text-white/60 mb-8 text-sm max-w-lg mx-auto font-serif italic">
                 BIT Mesra students: Enter Roll Number to decrypt 50% discount code.
             </p>
